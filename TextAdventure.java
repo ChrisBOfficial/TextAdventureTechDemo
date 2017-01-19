@@ -87,6 +87,10 @@ public class TextAdventure {
             int choice = scan.nextInt();
             combatChoice(choice, Monster.speed, Monster);
         }
+        if(runWorked == 0) {
+            timerDelay(1000);
+            combatResult(Monster, Monster.xpVal);
+        }
     }
 
     private static void combatChoice(int x, double y, Monster Monster) {
@@ -128,9 +132,12 @@ public class TextAdventure {
         }
     }
 
+    static int affixMake() {
+        return (int)(Math.random() * 100);
+    }
+
     public static void main (String[] args) throws IOException {
         Scanner scan = new Scanner(System.in);
-        int affixMake = (int)(Math.random() * 100);
 
         System.out.println("Welcome to the TextAdventure TechDemo. What is your name?");
         String playerName = scan.nextLine();
@@ -143,7 +150,7 @@ public class TextAdventure {
 
         System.out.println("Welcome " + Player.classType + ". Now we need to acquaint you with combat.\n\n" +
                            "| 1. Uh oh. | 2. I'm ready! | 3. No thank you... |\n");
-        Monster tutorialCreature = new Monster("Skeleton",1,1,1.1, 10, affixMake);
+        Monster tutorialCreature = new Monster("Skeleton",1,1,1.1, 10);
 
         scan.nextInt();
         System.out.println("Great! You see a level " + tutorialCreature.level + " " +
@@ -152,17 +159,12 @@ public class TextAdventure {
         combatStart(tutorialCreature);
 
         timerDelay(1000);
-        if(runWorked == 0)
-            combatResult(tutorialCreature, tutorialCreature.xpVal);
-        timerDelay(2000);
 
-        Monster zombie = new Monster("Zombie", 1, 1,0.8, 15, affixMake);
+        Monster zombie = new Monster("Zombie", 1, 1,0.8, 15);
 
         System.out.println("You are ambushed by a level " + zombie.level + " " + zombie.getName() + "! What do you wish to do?\n");
 
         combatStart(zombie);
         timerDelay(1000);
-        if(runWorked == 0)
-            combatResult(zombie, zombie.xpVal);
     }
 }
