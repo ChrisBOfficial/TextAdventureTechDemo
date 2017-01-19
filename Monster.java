@@ -33,11 +33,7 @@ public class Monster {
         HP -= x;
     }
 
-    void setXpVal (double x) {
-        xpVal = x;
-    }
-
-    Monster (String n, int l, int d, double s, int AC, int affix) {
+    Monster (String n, int l, int d, double s, int AC) {
         name = n;
         level = l;
         HP = (level * 7);
@@ -46,6 +42,8 @@ public class Monster {
         attack = level;
         armorClass = AC;
         xpVal = (HP / 100) * 2;
+        int affix = TextAdventure.affixMake();
+
         if(affix > 80 && affix < 91) {
             affixName = "Bolstered ";
             name = affixName + n;
