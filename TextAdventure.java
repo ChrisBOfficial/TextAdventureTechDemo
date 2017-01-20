@@ -162,7 +162,8 @@ public class TextAdventure {
 
         Monster zombie = new Monster("Zombie", 1, 1,0.8, 15);
 
-        System.out.println("You are ambushed by a level " + zombie.level + " " + zombie.getName() + "! What do you wish to do?\n");
+        System.out.println("You are ambushed by a level " + zombie.level + " " + zombie.getName() +
+                           "! What do you wish to do?\n");
 
         combatStart(zombie);
         timerDelay(1000);

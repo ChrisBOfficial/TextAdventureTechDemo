@@ -88,6 +88,6 @@ public class Player {
         archetype = x;
     }
 
-    public static void main (String str[]) {
+    public static void main (String str[]) throws IOException {
     }
 }
