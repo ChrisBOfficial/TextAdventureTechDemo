@@ -168,6 +168,6 @@ public class TextAdventure {
         combatStart(zombie);
         timerDelay(1000);
 
-        System.out.println("Thanks for trying it, Chris will be adding more to the game over time.");
+        System.out.println("Thanks for trying the tech, I will be adding more to the game over time.");
     }
 }
