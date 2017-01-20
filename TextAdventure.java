@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.lang.*;
 import java.util.Scanner;
 import java.util.ArrayList;
+/*4595556e1cde9eacf9e1cc98843a6ef94227b0e6c29e8f042be61600765e59ed*/
 
 public class TextAdventure {
     private static int runWorked = 0;
