@@ -1,3 +1,4 @@
+//TODO: Inventory access in combat, Items, Inventory management OOC, Add story
 import java.io.IOException;
 import java.lang.*;
 import java.util.Scanner;
