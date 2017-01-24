@@ -53,6 +53,7 @@ public class TextAdventure {
     }
 
     private static void item() {
+
     }
 
     private static void run(double s, double monS) {
@@ -71,8 +72,9 @@ public class TextAdventure {
             System.out.println("\nYou fail to escape.\n");
     }
 
-    private static void combatOptions() {
-        System.out.println("---------------------------------" +
+    private static void combatOptions(String monsterName) {
+        System.out.println(Artwork.getArtwork(monsterName));
+        System.out.println("\n---------------------------------" +
                 "\n| 1. ATTACK | 2. ITEM(fix me) | 3. RUN | " +
                 "\n---------------------------------\n");
     }
@@ -82,14 +84,16 @@ public class TextAdventure {
 
         while (Player.HP > 0) {
             timerDelay(250);
-            if(Monster.HP <= 0 || runWorked == 1)
+            if(Monster.HP <= 0 || runWorked == 1) {
+                runWorked = 0;
                 break;
-            combatOptions();
+            }
+            combatOptions(Monster.getName());
             int choice = scan.nextInt();
             combatChoice(choice, Monster.speed, Monster);
         }
         if(runWorked == 0) {
-            timerDelay(1000);
+            timerDelay(500);
             combatResult(Monster, Monster.xpVal);
         }
     }
@@ -116,7 +120,7 @@ public class TextAdventure {
             Player.setLevel(-exp);
             System.out.println("\nYou lost... Current level - " + (int)Player.levelRaw);
         } else
-            System.out.println("Error.");
+            System.out.print("");
         levelUpCheck(Monster.xpVal);
     }
 
@@ -140,6 +144,41 @@ public class TextAdventure {
     public static void main (String[] args) throws IOException {
         Scanner scan = new Scanner(System.in);
 
+        System.out.println("                                      /|\n" +
+                "                                     |\\|\n" +
+                "                                     |||\n" +
+                "                                     |||\n" +
+                "                                     |||\n" +
+                "                                     |||\n" +
+                "                                     |||\n" +
+                "                                     |||\n" +
+                "                                  ~-[{o}]-~\n" +
+                "                                     |/|\n" +
+                "              ___                    |/|\n" +
+                "             ///~`     |\\\\_          `0'         =\\\\\\\\         . .\n" +
+                "            ,  |='  ,))\\_| ~-_                    _)  \\      _/_/|\n" +
+                "           / ,' ,;((((((    ~ \\                  `~~~\\-~-_ /~ (_/\\\n" +
+                "         /' -~/~)))))))'\\_   _/'                      \\_  /'  D   |\n" +
+                "        (       (((((( ~-/ ~-/                          ~-;  /    \\--_\n" +
+                "         ~~--|   ))''    ')  `                            `~~\\_    \\   )\n" +
+                "             :        (_  ~\\           ,                    /~~-     ./\n" +
+                "              \\        \\_   )--__  /(_/)                   |    )    )|\n" +
+                "    ___       |_     \\__/~-__    ~~   ,'      /,_;,   __--(   _/      |\n" +
+                "  //~~\\`\\    /' ~~~----|     ~~~~~~~~'        \\-  ((~~    __-~        |\n" +
+                "((()   `\\`\\_(_     _-~~-\\                      ``~~ ~~~~~~   \\_      /\n" +
+                " )))     ~----'   /      \\                                   )       )\n" +
+                "  (         ;`~--'        :                                _-    ,;;(\n" +
+                "            |    `\\       |                             _-~    ,;;;;)\n" +
+                "            |    /'`\\     ;                          _-~          _/\n" +
+                "           /~   /    |    )                         /;;;''  ,;;:-~\n" +
+                "          |    /     / | /                         |;;'   ,''\n" +
+                "          /   /     |  \\\\|                         |   ,;(\n" +
+                "        _/  /'       \\  \\_)                   .---__\\_    \\,--._______\n" +
+                "       ( )|'         (~-_|                   (;;'  ;;;~~~/' `;;|  `;;;\\\n" +
+                "        ) `\\_         |-_;;--__               ~~~----__/'    /'_______/\n" +
+                "        `----'       (   `~--_ ~~~;;------------~~~~~ ;;;'_/'\n" +
+                "                     `~~~~~~~~'~~~-----....___;;;____---~~\n");
+
         System.out.println("Welcome to the TextAdventure TechDemo. What is your name?");
         String playerName = scan.nextLine();
 
@@ -154,19 +193,19 @@ public class TextAdventure {
         Monster tutorialCreature = new Monster("Skeleton",1,1,1.1, 10);
 
         scan.nextInt();
-        System.out.println("Great! You see a level " + tutorialCreature.level + " " +
+        System.out.println("Great! You see a level " + tutorialCreature.level + " " + tutorialCreature.affixName +
                            tutorialCreature.getName() + "! What do you wish to do?\n");
 
         combatStart(tutorialCreature);
 
         timerDelay(1000);
 
-        Monster zombie = new Monster("Zombie", 1, 1,0.8, 15);
+        Monster imp = new Monster("Imp", 1, 1,0.8, 15);
 
-        System.out.println("You are ambushed by a level " + zombie.level + " " + zombie.getName() +
+        System.out.println("You are ambushed by a level " + imp.level + " " + imp.affixName + imp.getName() +
                            "! What do you wish to do?\n");
 
-        combatStart(zombie);
+        combatStart(imp);
         timerDelay(1000);
 
         System.out.println("Thanks for trying the TechDemo, I will be adding more to the game over time.");

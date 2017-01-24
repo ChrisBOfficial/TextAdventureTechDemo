@@ -6,7 +6,7 @@ public class Monster {
 
     private String name;
     int level;
-    private String affixName;
+    String affixName = "";
     double HP;
     double damage;
     int attack;
@@ -46,13 +46,11 @@ public class Monster {
 
         if(affix > 80 && affix < 91) {
             affixName = "Bolstered ";
-            name = affixName + n;
             HP *= 1.4;
             armorClass += 3;
             xpVal *= 1.5;
         } else if(affix > 90 && affix < 96) {
             affixName = "Mighty ";
-            name = affixName + n;
             HP *= 1.5;
             damage *= 1.2;
             armorClass += 5;
@@ -60,7 +58,6 @@ public class Monster {
             xpVal *= 1.8;
         } else if(affix > 95 && affix < 101) {
             affixName = "Tyrannical ";
-            name = affixName + n;
             HP *= 1.5;
             damage *= 1.4;
             attack += 2;
