@@ -140,7 +140,7 @@ public class Artwork {
                     "                     _P\\                                                   ";
         }
             if (type.equals("Imp")) {
-                return " (_(\n" +
+                return "     (_(\n" +
                         "    ('')\n" +
                         "  _  \"\\ )>,_     .-->\n" +
                         "  _>--w/((_ >,_.'\n" +

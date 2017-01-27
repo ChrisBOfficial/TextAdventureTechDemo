@@ -1,6 +1,8 @@
 //TODO: Inventory access in combat, Items, Inventory management OOC, Add story
 import java.io.IOException;
 import java.lang.*;
+import java.lang.reflect.Array;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.ArrayList;
 /*4595556e1cde9eacf9e1cc98843a6ef94227b0e6c29e8f042be61600765e59ed*/
@@ -54,6 +56,7 @@ public class TextAdventure {
     }
 
     private static void item() {
+        System.out.println("Which item would you like to use?");
 
     }
 
@@ -82,6 +85,7 @@ public class TextAdventure {
 
     private static void combatStart(Monster Monster) {
         Scanner scan = new Scanner(System.in);
+        int choice = 0;
 
         while (Player.HP > 0) {
             timerDelay(250);
@@ -89,9 +93,17 @@ public class TextAdventure {
                 runWorked = 0;
                 break;
             }
-            combatOptions(Monster.getName());
-            int choice = scan.nextInt();
-            combatChoice(choice, Monster.speed, Monster);
+            do {
+                try {
+                    combatOptions(Monster.getName());
+                    choice = scan.nextInt();
+                    combatChoice(choice, Monster.speed, Monster);
+                } catch (InputMismatchException e) {
+                    System.out.println("Enter a number please.\n");
+                    timerDelay(1000);
+                }
+                scan.nextLine();
+            } while (choice == 0);
         }
         if(runWorked == 0) {
             timerDelay(500);
@@ -142,7 +154,7 @@ public class TextAdventure {
         return (int)(Math.random() * 100);
     }
 
-    public static void main (String[] args) throws IOException {
+    public static void main (String[] str) throws IOException {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("                                      /|\n" +
@@ -184,10 +196,22 @@ public class TextAdventure {
         String playerName = scan.nextLine();
 
         System.out.println("Welcome " + playerName + ", which archetype would you like?\n");
-        System.out.println("| 1. WARRIOR | 2. THIEF | 3. KNIGHT |\n");
-        int chosenClass = scan.nextInt();
+        int chosenClass = 0;
+        do {
+            try {
+                System.out.println("| 1. WARRIOR | 2. THIEF | 3. KNIGHT |\n");
+                chosenClass = scan.nextInt();
+                Player.setArch(chosenClass);
+                Player.classChoice(chosenClass);
+            } catch (InputMismatchException e) {
+                System.out.println("Enter a number please.\n");
+                timerDelay(1000);
+            }
+            scan.nextLine();
+        } while (chosenClass == 0);
+        /*int chosenClass = scan.nextInt();
         Player.setArch(chosenClass);
-        Player.classChoice(chosenClass);
+        Player.classChoice(chosenClass);*/
 
         System.out.println("Welcome " + Player.classType + ". Now we need to acquaint you with combat.\n\n" +
                            "| 1. Uh oh. | 2. I'm ready! | 3. No thank you... |\n");
@@ -208,7 +232,5 @@ public class TextAdventure {
 
         combatStart(imp);
         timerDelay(1000);
-
-        System.out.println("Thanks for trying the TechDemo, I will be adding more to the game over time.");
     }
 }

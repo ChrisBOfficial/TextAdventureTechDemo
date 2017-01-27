@@ -1,8 +1,11 @@
 import java.io.IOException;
 import java.lang.*;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Player {
+    static ArrayList<Item> inventory = new ArrayList<>();
+
     static int archetype;
     static double levelRaw = 1.0;
     static String classType;
@@ -82,6 +85,8 @@ public class Player {
             thiefMod();
         if (x == 3)
             knightMod();
+        else
+            classType = "";
     }
 
     static void setArch (int x) {
