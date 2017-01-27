@@ -85,8 +85,11 @@ public class Player {
             thiefMod();
         if (x == 3)
             knightMod();
-        else
+        else if (x > 3 || x < 1){
+            System.out.println("No class then...");
+            TextAdventure.timerDelay(1000);
             classType = "";
+        }
     }
 
     static void setArch (int x) {

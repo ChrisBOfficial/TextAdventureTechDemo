@@ -5,12 +5,12 @@ import java.lang.reflect.Array;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.ArrayList;
-/*4595556e1cde9eacf9e1cc98843a6ef94227b0e6c29e8f042be61600765e59ed*/
+/*4595556e1cde9eac9e1cc98843a6ef94227b0e6c29e8f042be61600765e59ed*/
 
 public class TextAdventure {
     private static int runWorked = 0;
 
-    private static void timerDelay(int x) {
+    static void timerDelay(int x) {
         try {
             Thread.sleep(x);
         } catch (InterruptedException ex) {
@@ -86,6 +86,7 @@ public class TextAdventure {
     private static void combatStart(Monster Monster) {
         Scanner scan = new Scanner(System.in);
         int choice = 0;
+        int c = 0;
 
         while (Player.HP > 0) {
             timerDelay(250);
@@ -98,9 +99,14 @@ public class TextAdventure {
                     combatOptions(Monster.getName());
                     choice = scan.nextInt();
                     combatChoice(choice, Monster.speed, Monster);
-                } catch (InputMismatchException e) {
+                } catch (InputMismatchException ex) {
+                    if(c % 3 == 0 && c != 0) {
+                        System.out.println("No action is not an option.");
+                        timerDelay(750);
+                    }
                     System.out.println("Enter a number please.\n");
-                    timerDelay(1000);
+                    c++;
+                    timerDelay(750);
                 }
                 scan.nextLine();
             } while (choice == 0);
@@ -196,25 +202,38 @@ public class TextAdventure {
         String playerName = scan.nextLine();
 
         System.out.println("Welcome " + playerName + ", which archetype would you like?\n");
-        int chosenClass = 0;
+        int uh = 0;
         do {
             try {
                 System.out.println("| 1. WARRIOR | 2. THIEF | 3. KNIGHT |\n");
-                chosenClass = scan.nextInt();
+                int chosenClass = scan.nextInt();
+                uh = chosenClass;
                 Player.setArch(chosenClass);
                 Player.classChoice(chosenClass);
             } catch (InputMismatchException e) {
                 System.out.println("Enter a number please.\n");
-                timerDelay(1000);
+                timerDelay(750);
             }
             scan.nextLine();
-        } while (chosenClass == 0);
+        } while (uh == 0);
 
         System.out.println("Welcome " + Player.classType + ". Now we need to acquaint you with combat.\n\n" +
                            "| 1. Uh oh. | 2. I'm ready! | 3. No thank you... |\n");
         Monster tutorialCreature = new Monster("Skeleton",1,1,1.1, 10);
+        int meh = 0;
+        int c = 0;
 
-        scan.nextInt();
+        do {
+            try {
+                meh = scan.nextInt();
+            } catch (InputMismatchException e) {
+                if(c % 3 == 0 && c != 0)
+                    System.out.println("Do you want to play or not?!");
+                System.out.println("Enter a number please.");
+                c++;
+            }
+            scan.nextLine();
+        } while (meh == 0);
         System.out.println("Great! You see a level " + tutorialCreature.level + " " + tutorialCreature.affixName +
                            tutorialCreature.getName() + "! What do you wish to do?\n");
 
