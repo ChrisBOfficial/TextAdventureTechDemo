@@ -209,9 +209,6 @@ public class TextAdventure {
             }
             scan.nextLine();
         } while (chosenClass == 0);
-        /*int chosenClass = scan.nextInt();
-        Player.setArch(chosenClass);
-        Player.classChoice(chosenClass);*/
 
         System.out.println("Welcome " + Player.classType + ". Now we need to acquaint you with combat.\n\n" +
                            "| 1. Uh oh. | 2. I'm ready! | 3. No thank you... |\n");

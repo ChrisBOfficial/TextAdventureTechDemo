@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19798a4d-256c-4787-8474-090bc3edb05e" name="Default" comment="Started working on inventory system, and added protection from incorrect inputs using InputMismatchException.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Item.java" />
+    <list default="true" id="19798a4d-256c-4787-8474-090bc3edb05e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Artwork.class" afterPath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Artwork.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Player.class" afterPath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Player.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/TextAdventure.class" afterPath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/TextAdventure.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Artwork.java" afterPath="$PROJECT_DIR$/Artwork.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Player.java" afterPath="$PROJECT_DIR$/Player.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextAdventure.java" afterPath="$PROJECT_DIR$/TextAdventure.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/.idea/workspace.xml" />
     </list>
@@ -33,8 +29,8 @@
       <file leaf-file-name="TextAdventure.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TextAdventure.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="226" column="0" lean-forward="true" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
+            <state relative-caret-position="1160">
+              <caret line="215" column="0" lean-forward="true" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
               <folding>
                 <element signature="method#timerDelay#0;class#TextAdventure#0" expanded="false" />
                 <element signature="method#attack#0;class#TextAdventure#0" expanded="false" />
@@ -45,7 +41,7 @@
                 <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
                 <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
                 <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-                <marker date="1485492725000" expanded="false" signature="5230:8030" ph="..." />
+                <marker date="1485493092000" expanded="false" signature="5230:8030" ph="..." />
               </folding>
             </state>
           </provider>
@@ -527,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1485294102826</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Started working on inventory system, and added protection from incorrect inputs using InputMismatchException.">
+      <created>1485493073036</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1485493073036</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -541,7 +544,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="813" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -608,7 +611,7 @@
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1485492725000" expanded="false" signature="5230:8030" ph="..." />
+            <marker date="1485493092000" expanded="false" signature="5230:8030" ph="..." />
           </folding>
         </state>
       </provider>
@@ -685,7 +688,7 @@
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1485492725000" expanded="false" signature="5230:8030" ph="..." />
+            <marker date="1485493092000" expanded="false" signature="5230:8030" ph="..." />
           </folding>
         </state>
       </provider>
@@ -754,7 +757,7 @@
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1485492725000" expanded="false" signature="5230:8030" ph="..." />
+            <marker date="1485493092000" expanded="false" signature="5230:8030" ph="..." />
           </folding>
         </state>
       </provider>
@@ -823,7 +826,7 @@
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1485492725000" expanded="false" signature="5230:8030" ph="..." />
+            <marker date="1485493092000" expanded="false" signature="5230:8030" ph="..." />
           </folding>
         </state>
       </provider>
@@ -892,7 +895,7 @@
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1485492725000" expanded="false" signature="5230:8030" ph="..." />
+            <marker date="1485493092000" expanded="false" signature="5230:8030" ph="..." />
           </folding>
         </state>
       </provider>
@@ -961,7 +964,7 @@
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1485492725000" expanded="false" signature="5230:8030" ph="..." />
+            <marker date="1485493092000" expanded="false" signature="5230:8030" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1030,7 +1033,7 @@
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1485492725000" expanded="false" signature="5230:8030" ph="..." />
+            <marker date="1485493092000" expanded="false" signature="5230:8030" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1075,7 +1078,7 @@
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1485492725000" expanded="false" signature="5230:8030" ph="..." />
+            <marker date="1485493092000" expanded="false" signature="5230:8030" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1166,8 +1169,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TextAdventure.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="226" column="0" lean-forward="true" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
+        <state relative-caret-position="1160">
+          <caret line="215" column="0" lean-forward="true" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
           <folding>
             <element signature="method#timerDelay#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#attack#0;class#TextAdventure#0" expanded="false" />
@@ -1178,7 +1181,7 @@
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1485492725000" expanded="false" signature="5230:8030" ph="..." />
+            <marker date="1485493092000" expanded="false" signature="5230:8030" ph="..." />
           </folding>
         </state>
       </provider>
