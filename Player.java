@@ -23,7 +23,7 @@ public class Player {
         levelRaw += x;
     }
 
-    static void setMaxHP(double x) {
+    private static void setMaxHP(double x) {
         maxHP += x;
     }
 
@@ -31,19 +31,19 @@ public class Player {
         HP += x;
     }
 
-    static void setDamage(double x) {
+    private static void setDamage(double x) {
         damage *= x;
     }
 
-    static void setSpeed(double x) {
+    private static void setSpeed(double x) {
         speed *= x;
     }
 
-    static void setAttack(int x) {
+    private static void setAttack(int x) {
         attack += x;
     }
 
-    static void setArmorClass(int x) {
+    private static void setArmorClass(int x) {
         armorClass += x;
     }
 
@@ -51,7 +51,7 @@ public class Player {
         makeAttack = (int)(Math.random() * 20 + 1) + attack;
     }
 
-    static void warriorMod () {
+    private static void warriorMod () {
         setHealth(2.4);
         setMaxHP(2.4);
         setDamage(2.7);
@@ -60,7 +60,7 @@ public class Player {
         classType = "Warrior";
         setArmorClass(1);
     }
-    static void thiefMod () {
+    private static void thiefMod () {
         setHealth(2.0);
         setMaxHP(2.0);
         setDamage(2.4);
@@ -68,7 +68,7 @@ public class Player {
         setAttack(4);
         classType = "Thief";
     }
-    static void knightMod () {
+    private static void knightMod () {
         setHealth(2.6);
         setMaxHP(2.6);
         setDamage(2.2);

@@ -55,9 +55,22 @@ public class TextAdventure {
                 "\nYour Health: " + Player.HP);
     }
 
-    private static void item() {
-        System.out.println("Which item would you like to use?");
+    private static void item(Monster Monster) {
+        Scanner scan = new Scanner(System.in);
 
+        System.out.println("Which item would you like to use?");
+        Inventory.printItems();
+        int itemChoice = 0;
+        do {
+            try {
+                itemChoice = scan.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Enter a number please.\n");
+                timerDelay(500);
+            }
+            scan.nextLine();
+        } while (itemChoice == 0);
+        Inventory.items.get(itemChoice - 1).useItem(Monster); //Uses selected item and modifies monster's stats accordingly
     }
 
     private static void run(double s, double monS) {
@@ -123,7 +136,7 @@ public class TextAdventure {
                 attack(Monster);
                 break;
             case 2:
-                item();
+                item(Monster);
                 break;
             case 3:
                 run(Player.speed, y);
@@ -248,5 +261,6 @@ public class TextAdventure {
 
         combatStart(imp);
         timerDelay(1000);
+        System.out.println("You find a net from the corpse of the imp. Net added to your inventory.");
     }
 }

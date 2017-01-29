@@ -1,4 +1,4 @@
-public class Artwork {
+class Artwork {
 
     static String getArtwork (String type) {
         if (type.equals("Skeleton")) {
