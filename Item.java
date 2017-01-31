@@ -5,12 +5,18 @@ public class Item {
     private int attackMod;
     private int armorClassMod;
     private double speedMod;
+    private String code;
 
     Item (String n, int atkMod, int acMod, double sMod) {
         name = n;
         attackMod = atkMod;
         armorClassMod = acMod;
         speedMod = sMod;
+    }
+
+    Item (String n, String c) {
+        name = n;
+        code = c;
     }
 
     void useItem(Monster Monster) {

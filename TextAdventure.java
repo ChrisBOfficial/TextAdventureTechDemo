@@ -1,4 +1,4 @@
-//TODO: Inventory access in combat, Items, Inventory management OOC, Add story
+//TODO: Items, Inventory management OOC, Add story
 import java.io.IOException;
 import java.lang.*;
 import java.lang.reflect.Array;
@@ -8,6 +8,7 @@ import java.util.ArrayList;
 /*4595556e1cde9eac9e1cc98843a6ef94227b0e6c29e8f042be61600765e59ed*/
 
 public class TextAdventure {
+    private static Scanner scan = new Scanner(System.in);
     private static int runWorked = 0;
 
     static void timerDelay(int x) {
@@ -87,6 +88,12 @@ public class TextAdventure {
         }
         else
             System.out.println("\nYou fail to escape.\n");
+    }
+
+    private static void worldOptions() {
+        System.out.println("------------------" +
+                "| 1. YES | 2. NO |" +
+                "------------------");
     }
 
     private static void combatOptions(String monsterName) {
@@ -174,7 +181,9 @@ public class TextAdventure {
     }
 
     public static void main (String[] str) throws IOException {
-        Scanner scan = new Scanner(System.in);
+        Item churchKey = new Item ("Church Key", "79ed689e6714525a401b0acf19d2ac5");
+        Inventory.addItems(churchKey);
+        Door churchEntrance = new Door("79ed689e6714525a401b0acf19d2ac5");
 
         System.out.println("                                      /|\n" +
                 "                                     |\\|\n" +
@@ -262,5 +271,30 @@ public class TextAdventure {
         combatStart(imp);
         timerDelay(1000);
         System.out.println("You find a net from the corpse of the imp. Net added to your inventory.");
+
+        System.out.println("You move past the imp and find a door in front of you. Use your key?");
+
+        worldOptions();
+        int worldChoice = 0;
+        do {
+            try {
+                worldChoice = Integer.parseInt(scan.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Enter a number please.");
+            }
+        } while (worldChoice == 0);
+
+        if(worldChoice == 1)
+            Church();
+        else
+            System.out.println("Game over.");
+
     }
+
+    private static void Church() {
+        System.out.println("Opening...");
+        timerDelay(1000);
+        System.out.println("Welcome to the church!");
+    }
+
 }
