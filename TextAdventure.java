@@ -11,6 +11,17 @@ public class TextAdventure {
     private static Scanner scan = new Scanner(System.in);
     private static int runWorked = 0;
 
+    private static int nextInt(int x) {
+        do {
+            try {
+                x = Integer.parseInt(scan.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Enter a number please.");
+            }
+        } while (x == 0);
+        return x;
+    }
+
     static void timerDelay(int x) {
         try {
             Thread.sleep(x);
@@ -90,16 +101,18 @@ public class TextAdventure {
             System.out.println("\nYou fail to escape.\n");
     }
 
-    private static void worldOptions() {
-        System.out.println("------------------" +
-                "| 1. YES | 2. NO |" +
-                "------------------");
+    private static void optionsBorder(String x) {
+        for(int i = 0; i < x.length(); i++)
+            System.out.print("-");
+        System.out.println("\n" + x);
+        for(int i = 0; i < x.length(); i++)
+            System.out.print("-");
     }
 
     private static void combatOptions(String monsterName) {
         System.out.println(Artwork.getArtwork(monsterName));
         System.out.println("\n---------------------------------" +
-                "\n| 1. ATTACK | 2. ITEM(fix me) | 3. RUN | " +
+                "\n| 1. ATTACK | 2. ITEM | 3. RUN | " +
                 "\n---------------------------------\n");
     }
 
@@ -274,15 +287,11 @@ public class TextAdventure {
 
         System.out.println("You move past the imp and find a door in front of you. Use your key?");
 
-        worldOptions();
+        String yesOrNo = "| 1. YES | 2. NO |";
+        optionsBorder(yesOrNo);
+
         int worldChoice = 0;
-        do {
-            try {
-                worldChoice = Integer.parseInt(scan.nextLine());
-            } catch (NumberFormatException e) {
-                System.out.println("Enter a number please.");
-            }
-        } while (worldChoice == 0);
+        worldChoice = nextInt(worldChoice);
 
         if(worldChoice == 1)
             Church();
@@ -293,7 +302,7 @@ public class TextAdventure {
 
     private static void Church() {
         System.out.println("Opening...");
-        timerDelay(1000);
+        timerDelay(1500);
         System.out.println("Welcome to the church!");
     }
 
