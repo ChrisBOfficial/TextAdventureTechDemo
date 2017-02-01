@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19798a4d-256c-4787-8474-090bc3edb05e" name="Default" comment="Changed method access in Monster.class and Player.class; But mainly got a working inventory system that I can improve upon later. You can view all your items in your inventory and use them during combat, and they affect monster stats :-)">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Location.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Door.java" afterPath="$PROJECT_DIR$/Door.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Item.java" afterPath="$PROJECT_DIR$/Item.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextAdventure.java" afterPath="$PROJECT_DIR$/TextAdventure.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,8 +28,8 @@
       <file leaf-file-name="TextAdventure.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TextAdventure.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="2240">
+              <caret line="290" column="0" lean-forward="true" selection-start-line="290" selection-start-column="0" selection-end-line="290" selection-end-column="0" />
               <folding>
                 <element signature="method#nextInt#0;class#TextAdventure#0" expanded="false" />
                 <element signature="method#timerDelay#0;class#TextAdventure#0" expanded="false" />
@@ -33,11 +37,25 @@
                 <element signature="method#healthStats#0;class#TextAdventure#0" expanded="false" />
                 <element signature="method#run#0;class#TextAdventure#0" expanded="false" />
                 <element signature="method#optionsBorder#0;class#TextAdventure#0" expanded="false" />
+                <element signature="method#combatOptions#0;class#TextAdventure#0" expanded="false" />
                 <element signature="method#combatStart#0;class#TextAdventure#0" expanded="false" />
                 <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
                 <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
                 <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-                <marker date="1485892470000" expanded="false" signature="6731:9531" ph="..." />
+                <marker date="1485961268000" expanded="false" signature="6731:9531" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Item.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Item.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+              <folding>
+                <element signature="e#428#429#0" expanded="true" />
+                <element signature="e#455#456#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -46,13 +64,25 @@
       <file leaf-file-name="Door.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Door.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+            <state relative-caret-position="20">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#97#98#0" expanded="true" />
-                <element signature="e#121#122#0" expanded="true" />
+                <element signature="e#98#99#0" expanded="true" />
+                <element signature="e#122#123#0" expanded="true" />
+                <element signature="e#146#147#0" expanded="true" />
+                <element signature="e#173#174#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Location.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Location.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -70,16 +100,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Item.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Item.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Monster.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Monster.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -93,8 +113,8 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="460">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -132,9 +152,10 @@
         <option value="$PROJECT_DIR$/Inventory.java" />
         <option value="$PROJECT_DIR$/Player.java" />
         <option value="$PROJECT_DIR$/Key.java" />
-        <option value="$PROJECT_DIR$/Item.java" />
-        <option value="$PROJECT_DIR$/Door.java" />
         <option value="$PROJECT_DIR$/MD5.java" />
+        <option value="$PROJECT_DIR$/Location.java" />
+        <option value="$PROJECT_DIR$/Door.java" />
+        <option value="$PROJECT_DIR$/Item.java" />
         <option value="$PROJECT_DIR$/TextAdventure.java" />
       </list>
     </option>
@@ -160,7 +181,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -175,8 +196,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -606,19 +627,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="88" column="27" lean-forward="false" selection-start-line="88" selection-start-column="27" selection-end-line="88" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Item.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#428#429#0" expanded="true" />
+            <element signature="e#455#456#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -634,24 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="142" column="16" lean-forward="false" selection-start-line="142" selection-start-column="16" selection-end-line="142" selection-end-column="16" />
-          <folding>
-            <marker date="1485654676000" expanded="false" signature="113:508" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="567:13121" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="13186:13437" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="13508:14669" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="14744:17848" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="17918:18871" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="18940:20371" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="20440:21613" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="21687:23729" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="23801:24951" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="25025:25210" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="25297:30004" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="30076:31457" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="31534:32448" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="32518:33195" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="33250:35865" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -666,11 +664,12 @@
             <element signature="method#healthStats#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#run#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#optionsBorder#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#combatOptions#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatStart#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1485892470000" expanded="false" signature="6731:9531" ph="..." />
+            <marker date="1485961268000" expanded="false" signature="6731:9531" ph="..." />
           </folding>
         </state>
       </provider>
@@ -687,7 +686,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#428#429#0" expanded="true" />
+            <element signature="e#455#456#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -703,24 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="142" column="16" lean-forward="false" selection-start-line="142" selection-start-column="16" selection-end-line="142" selection-end-column="16" />
-          <folding>
-            <marker date="1485654676000" expanded="false" signature="113:508" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="567:13121" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="13186:13437" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="13508:14669" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="14744:17848" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="17918:18871" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="18940:20371" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="20440:21613" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="21687:23729" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="23801:24951" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="25025:25210" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="25297:30004" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="30076:31457" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="31534:32448" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="32518:33195" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="33250:35865" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -735,11 +719,12 @@
             <element signature="method#healthStats#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#run#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#optionsBorder#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#combatOptions#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatStart#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1485892470000" expanded="false" signature="6731:9531" ph="..." />
+            <marker date="1485961268000" expanded="false" signature="6731:9531" ph="..." />
           </folding>
         </state>
       </provider>
@@ -756,7 +741,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#428#429#0" expanded="true" />
+            <element signature="e#455#456#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -772,24 +760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding>
-            <marker date="1485654676000" expanded="false" signature="113:508" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="567:13121" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="13186:13437" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="13508:14669" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="14744:17848" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="17918:18871" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="18940:20371" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="20440:21613" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="21687:23729" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="23801:24951" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="25025:25210" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="25297:30004" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="30076:31457" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="31534:32448" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="32518:33195" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="33250:35865" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -804,11 +774,12 @@
             <element signature="method#healthStats#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#run#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#optionsBorder#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#combatOptions#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatStart#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1485892470000" expanded="false" signature="6731:9531" ph="..." />
+            <marker date="1485961268000" expanded="false" signature="6731:9531" ph="..." />
           </folding>
         </state>
       </provider>
@@ -833,24 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <marker date="1485654676000" expanded="false" signature="113:508" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="567:13121" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="13186:13437" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="13508:14669" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="14744:17848" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="17918:18871" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="18940:20371" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="20440:21613" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="21687:23729" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="23801:24951" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="25025:25210" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="25297:30004" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="30076:31457" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="31534:32448" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="32518:33195" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="33250:35865" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -865,11 +818,12 @@
             <element signature="method#healthStats#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#run#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#optionsBorder#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#combatOptions#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatStart#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1485892470000" expanded="false" signature="6731:9531" ph="..." />
+            <marker date="1485961268000" expanded="false" signature="6731:9531" ph="..." />
           </folding>
         </state>
       </provider>
@@ -894,24 +848,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <marker date="1485654676000" expanded="false" signature="113:508" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="567:13121" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="13186:13437" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="13508:14669" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="14744:17848" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="17918:18871" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="18940:20371" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="20440:21613" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="21687:23729" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="23801:24951" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="25025:25210" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="25297:30004" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="30076:31457" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="31534:32448" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="32518:33195" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="33250:35865" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -926,11 +862,12 @@
             <element signature="method#healthStats#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#run#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#optionsBorder#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#combatOptions#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatStart#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1485892470000" expanded="false" signature="6731:9531" ph="..." />
+            <marker date="1485961268000" expanded="false" signature="6731:9531" ph="..." />
           </folding>
         </state>
       </provider>
@@ -955,24 +892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <marker date="1485654676000" expanded="false" signature="113:508" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="567:13121" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="13186:13437" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="13508:14669" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="14744:17848" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="17918:18871" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="18940:20371" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="20440:21613" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="21687:23729" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="23801:24951" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="25025:25210" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="25297:30004" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="30076:31457" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="31534:32448" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="32518:33195" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="33250:35865" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -987,11 +906,12 @@
             <element signature="method#healthStats#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#run#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#optionsBorder#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#combatOptions#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatStart#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1485892470000" expanded="false" signature="6731:9531" ph="..." />
+            <marker date="1485961268000" expanded="false" signature="6731:9531" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1016,24 +936,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <marker date="1485654676000" expanded="false" signature="113:508" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="567:13121" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="13186:13437" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="13508:14669" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="14744:17848" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="17918:18871" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="18940:20371" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="20440:21613" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="21687:23729" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="23801:24951" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="25025:25210" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="25297:30004" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="30076:31457" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="31534:32448" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="32518:33195" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="33250:35865" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1048,11 +950,12 @@
             <element signature="method#healthStats#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#run#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#optionsBorder#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#combatOptions#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatStart#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1485892470000" expanded="false" signature="6731:9531" ph="..." />
+            <marker date="1485961268000" expanded="false" signature="6731:9531" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1077,24 +980,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <marker date="1485654676000" expanded="false" signature="113:508" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="567:13121" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="13186:13437" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="13508:14669" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="14744:17848" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="17918:18871" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="18940:20371" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="20440:21613" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="21687:23729" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="23801:24951" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="25025:25210" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="25297:30004" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="30076:31457" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="31534:32448" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="32518:33195" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="33250:35865" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1109,11 +994,12 @@
             <element signature="method#healthStats#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#run#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#optionsBorder#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#combatOptions#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatStart#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1485892470000" expanded="false" signature="6731:9531" ph="..." />
+            <marker date="1485961268000" expanded="false" signature="6731:9531" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1146,11 +1032,12 @@
             <element signature="method#healthStats#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#run#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#optionsBorder#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#combatOptions#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatStart#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1485892470000" expanded="false" signature="6731:9531" ph="..." />
+            <marker date="1485961268000" expanded="false" signature="6731:9531" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1176,23 +1063,49 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Key.java" />
+    <entry file="file://$PROJECT_DIR$/MD5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
           <folding>
-            <marker date="1485654676000" expanded="false" signature="113:508" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="567:13121" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="13186:13437" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="13508:14669" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="14744:17848" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="17918:18871" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="18940:20371" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="20440:21613" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="21687:23729" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="23801:24951" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="25025:25210" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="25297:30004" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="30076:31457" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="31534:32448" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="32518:33195" ph="..." />
-            <marker date="1485654676000" expanded="false" signature="33250:35865" ph="..." />
+            <element signature="e#428#429#0" expanded="true" />
+            <element signature="e#455#456#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Door.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#98#99#0" expanded="true" />
+            <element signature="e#122#123#0" expanded="true" />
+            <element signature="e#146#147#0" expanded="true" />
+            <element signature="e#173#174#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Inventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding>
+            <element signature="e#136#137#0" expanded="true" />
+            <element signature="e#164#165#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1205,60 +1118,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Key.java" />
-    <entry file="file://$PROJECT_DIR$/Inventory.java">
+    <entry file="file://$PROJECT_DIR$/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-          <folding>
-            <element signature="e#136#137#0" expanded="true" />
-            <element signature="e#164#165#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        <state relative-caret-position="460">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Door.java">
+    <entry file="file://$PROJECT_DIR$/Location.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#97#98#0" expanded="true" />
-            <element signature="e#121#122#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MD5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="80">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TextAdventure.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="2240">
+          <caret line="290" column="0" lean-forward="true" selection-start-line="290" selection-start-column="0" selection-end-line="290" selection-end-column="0" />
           <folding>
             <element signature="method#nextInt#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#timerDelay#0;class#TextAdventure#0" expanded="false" />
@@ -1266,11 +1145,12 @@
             <element signature="method#healthStats#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#run#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#optionsBorder#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#combatOptions#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatStart#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1485892470000" expanded="false" signature="6731:9531" ph="..." />
+            <marker date="1485961268000" expanded="false" signature="6731:9531" ph="..." />
           </folding>
         </state>
       </provider>

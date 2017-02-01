@@ -285,18 +285,18 @@ public class TextAdventure {
         timerDelay(1000);
         System.out.println("You find a net from the corpse of the imp. Net added to your inventory.");
 
-        System.out.println("You move past the imp and find a door in front of you. Use your key?");
+        timerDelay(500);
+        System.out.println("You move past the imp and find a door in front of you. Attempt to open...");
+        timerDelay(750);
 
-        String yesOrNo = "| 1. YES | 2. NO |";
-        optionsBorder(yesOrNo);
-
-        int worldChoice = 0;
-        worldChoice = nextInt(worldChoice);
-
-        if(worldChoice == 1)
-            Church();
-        else
-            System.out.println("Game over.");
+        for(Item x: Inventory.items) {
+            if(x.getCode().equals(churchEntrance.getLock())) {
+                Church();
+                break;
+            }
+            else
+                System.out.println("Door is locked.");
+        }
 
     }
 

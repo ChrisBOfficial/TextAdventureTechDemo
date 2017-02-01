@@ -5,7 +5,7 @@ public class Item {
     private int attackMod;
     private int armorClassMod;
     private double speedMod;
-    private String code;
+    private String code = "";
 
     Item (String n, int atkMod, int acMod, double sMod) {
         name = n;
@@ -17,6 +17,10 @@ public class Item {
     Item (String n, String c) {
         name = n;
         code = c;
+    }
+
+    String getCode() {
+        return code;
     }
 
     void useItem(Monster Monster) {
