@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="049a7fcd-a218-43d9-81b2-d606e452c8d1" name="Default" comment="Creating locations, work in progress don't hate me.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/preferred-vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+    <list default="true" id="049a7fcd-a218-43d9-81b2-d606e452c8d1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Location.java" afterPath="$PROJECT_DIR$/Location.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextAdventure.java" afterPath="$PROJECT_DIR$/TextAdventure.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,10 +44,9 @@
       <file leaf-file-name="Location.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Location.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="220">
+              <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
               <folding>
-                <element signature="e#227#228#0" expanded="true" />
                 <element signature="e#293#294#0" expanded="true" />
                 <element signature="e#377#378#0" expanded="true" />
                 <element signature="e#414#415#0" expanded="true" />
@@ -510,6 +505,14 @@
       <option name="presentableId" value="Default" />
       <updated>1485976684802</updated>
     </task>
+    <task id="LOCAL-00001" summary="Creating locations, work in progress don't hate me.">
+      <created>1486078624737</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1486078624737</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -587,7 +590,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#227#228#0" expanded="true" />
             <element signature="e#293#294#0" expanded="true" />
             <element signature="e#377#378#0" expanded="true" />
             <element signature="e#414#415#0" expanded="true" />
@@ -743,7 +745,6 @@
         <state relative-caret-position="80">
           <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
           <folding>
-            <element signature="e#227#228#0" expanded="true" />
             <element signature="e#293#294#0" expanded="true" />
             <element signature="e#377#378#0" expanded="true" />
             <element signature="e#414#415#0" expanded="true" />
@@ -813,10 +814,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Location.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="220">
+          <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
           <folding>
-            <element signature="e#227#228#0" expanded="true" />
             <element signature="e#293#294#0" expanded="true" />
             <element signature="e#377#378#0" expanded="true" />
             <element signature="e#414#415#0" expanded="true" />
