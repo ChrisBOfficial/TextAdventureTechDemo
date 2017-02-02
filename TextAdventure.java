@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class TextAdventure {
     private static Scanner scan = new Scanner(System.in);
     private static int runWorked = 0;
+    private static String yesOrNo = "|1. YES | 2. NO|";
 
     private static int nextInt(int x) {
         do {
@@ -197,6 +198,11 @@ public class TextAdventure {
         Item churchKey = new Item ("Church Key", "79ed689e6714525a401b0acf19d2ac5");
         Inventory.addItems(churchKey);
         Door churchEntrance = new Door("79ed689e6714525a401b0acf19d2ac5");
+        Location Church = new Location("Church", "Welcome to the Church!");
+        Room Church_1 = new Room("Northwest");
+        Room Church_2 = new Room("Northeast");
+        Room Church_3 = new Room("Southwest");
+        Room Church_4 = new Room("Southeast");
 
         System.out.println("                                      /|\n" +
                 "                                     |\\|\n" +
@@ -291,7 +297,8 @@ public class TextAdventure {
 
         for(Item x: Inventory.items) {
             if(x.getCode().equals(churchEntrance.getLock())) {
-                Church();
+                Inventory.items.remove(x);
+                //Church();
                 break;
             }
             else
@@ -299,11 +306,4 @@ public class TextAdventure {
         }
 
     }
-
-    private static void Church() {
-        System.out.println("Opening...");
-        timerDelay(1500);
-        System.out.println("Welcome to the church!");
-    }
-
 }
