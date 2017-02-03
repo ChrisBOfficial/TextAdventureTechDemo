@@ -1,7 +1,7 @@
 
 public class Item {
 
-    private String name;
+    String name;
     private int attackMod;
     private int armorClassMod;
     private double speedMod;
