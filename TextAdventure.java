@@ -8,16 +8,16 @@ import java.util.ArrayList;
 /*4595556e1cde9eac9e1cc98843a6ef94227b0e6c29e8f042be61600765e59ed*/
 
 public class TextAdventure {
-    static int directionFlag;
+    private static int directionFlag;
     private static Location Church = new Location("Church", "Welcome to the Church!");
     private static Room Church_1 = new Room("Northwest", 1);
-    static Room Church_2 = new Room("Northeast", 2);
-    static Room Church_3 = new Room("Southwest", 3);
-    static Room Church_4 = new Room("Southeast", 4);
+    private static Room Church_2 = new Room("Northeast", 2);
+    private static Room Church_3 = new Room("Southwest", 3);
+    private static Room Church_4 = new Room("Southeast", 4);
     private static Scanner scan = new Scanner(System.in);
     private static int runWorked = 0;
     private static String yesOrNo = "|1. YES | 2. NO|";
-    private static String worldOptions = "|1. EXPLORE | 2. INVENTORY | 3. LORE |";
+    private static String worldOptions = "|1. EXPLORE | 2. SEE INVENTORY | 3. LORE |";
 
     private static int nextInt(int x) {
         do {
@@ -90,7 +90,10 @@ public class TextAdventure {
             }
             scan.nextLine();
         } while (itemChoice == 0);
-        Inventory.items.get(itemChoice - 1).useItem(Monster); //Uses selected item and modifies monster's stats accordingly
+        //Uses selected item and modifies monster's stats accordingly
+        Inventory.items.get(itemChoice - 1).useItem(Monster);
+        System.out.println("You use " + Inventory.items.get(itemChoice - 1));
+        timerDelay(500);
     }
 
     private static void run(double s, double monS) {
@@ -115,6 +118,7 @@ public class TextAdventure {
         System.out.println("\n" + x);
         for(int i = 0; i < x.length(); i++)
             System.out.print("-");
+        System.out.println("\n");
     }
 
     private static void combatOptions(String monsterName) {
@@ -197,19 +201,83 @@ public class TextAdventure {
         }
     }
 
-    static void worldChoice(int x) {
+    private static void worldChoice(int x, Room r) {
         switch (x) {
             case 1:
                 System.out.println("What direction?");
                 System.out.println("NORTH EAST SOUTH WEST");
+                String exploreChoice = scan.nextLine().toLowerCase();
+                explore(exploreChoice, r);
                 break;
             case 2:
-                System.out.print("Your items: ");
+                System.out.println("Your items: ");
                 Inventory.printItems();
                 break;
             case 3:
 
                 break;
+        }
+    }
+
+    private static void explore(String exploreChoice, Room r) {
+        if (r.roomLoc == 1) {
+            directionFlag = 0;
+            while (directionFlag == 0) {
+                if ("north".equals(exploreChoice) || "west".equals(exploreChoice)) {
+                    System.out.println("Can't go there.");
+                    directionFlag = 1;
+                    worldChoice(1, r);
+                } else if ("east".equals(exploreChoice)) {
+                    TextAdventure.directionFlag = 1;
+                    Player.currentRoom = 2;
+                } else if ("south".equals(exploreChoice)) {
+                    TextAdventure.directionFlag = 1;
+                    Player.currentRoom = 3;
+                }
+            }
+        } else if (r.roomLoc == 2) {
+            directionFlag = 0;
+            while (directionFlag == 0) {
+                if ("north".equals(exploreChoice) || "east".equals(exploreChoice)) {
+                    System.out.println("Can't go there.");
+                    directionFlag = 1;
+                    worldChoice(1, r);
+                } else if ("west".equals(exploreChoice)) {
+                    directionFlag = 1;
+                    Player.currentRoom = 1;
+                } else if ("south".equals(exploreChoice)) {
+                    directionFlag = 1;
+                    Player.currentRoom = 4;
+                }
+            }
+        } else if(r.roomLoc == 3) {
+            directionFlag = 0;
+            while (TextAdventure.directionFlag == 0) {
+                if ("south".equals(exploreChoice) || "west".equals(exploreChoice)) {
+                    System.out.println("Can't go there.");
+                    directionFlag = 1;
+                    worldChoice(1, r);
+                } else if ("north".equals(exploreChoice)) {
+                    Player.currentRoom = 1;
+                } else if ("east".equals(exploreChoice)) {
+                    Player.currentRoom = 4;
+                }
+            }
+        } else if(r.roomLoc == 4) {
+            directionFlag = 0;
+            while (directionFlag == 0) {
+                if ("south".equals(exploreChoice) || "east".equals(exploreChoice)) {
+                    System.out.println("Can't go there.");
+                    directionFlag = 1;
+                    worldChoice(1, r);
+                } else if ("north".equals(exploreChoice)) {
+                    directionFlag = 1;
+                    Player.currentRoom = 2;
+                } else if ("west".equals(exploreChoice)) {
+                    directionFlag = 1;
+                    Player.currentRoom = 3;
+                }
+            }
         }
     }
 
@@ -326,15 +394,19 @@ public class TextAdventure {
 
     }
     private static void Church(int pos) {
-        Player.currentRoom = 1;
+        Item net = new Item("Net", 3, 0, 0);
+        Inventory.addItems(net);
+        Player.currentRoom = pos;
+
         System.out.println(Church.getIntroduction());
+
         System.out.println("What do you wish to do?\n");
         optionsBorder(worldOptions);
-        int choice = 0;
-        nextInt(choice);
-        worldChoice(choice);
-        String exploreChoice = scan.nextLine().toLowerCase();
-        Church_1.chooseDirection(exploreChoice);
+
+        int life = 0;
+        life = nextInt(life);
+        worldChoice(life, Church_1);
+
 
     }
 }

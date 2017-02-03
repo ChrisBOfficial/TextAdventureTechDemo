@@ -12,7 +12,7 @@ class Inventory {
         int c = 0;
         for(Item x : items) {
             c++;
-            System.out.print(c + ": " + x + " ");
+            System.out.print(c + ": " + x.name + " ");
         }
         System.out.println("");
     }

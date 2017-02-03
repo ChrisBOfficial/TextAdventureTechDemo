@@ -1,8 +1,10 @@
+import javax.xml.soap.Text;
+
 class Location {
     String name;
     private String introduction;
 
-    public String getIntroduction() {
+    String getIntroduction() {
         return introduction;
     }
 
@@ -11,8 +13,8 @@ class Location {
     }
 
     Location(String n, String i) {
-        n = name;
-        i = introduction;
+        name = n;
+        introduction = i;
     }
 
     Location() {
@@ -22,33 +24,15 @@ class Location {
 }
 
 class Room extends Location {
-    String roomDescription;
-    private int roomLoc;
+    private String roomDescription;
+    int roomLoc;
 
-    public void chooseDirection(String exploreChoice) {
-        if (roomLoc == 1) {
-            while (TextAdventure.directionFlag == 0) {
-                if ("north".equals(exploreChoice) || "west".equals(exploreChoice)) {
-                    System.out.println("Can't go there.");
-                    TextAdventure.worldChoice(1);
-                } else if ("east".equals(exploreChoice)) {
-                    Player.currentRoom = 2;
-                } else if ("south".equals(exploreChoice)) {
-                    Player.currentRoom = 3;
-                }
-            }
-        } else if (roomLoc == 2) {
-            while (TextAdventure.directionFlag == 0) {
-                if ("north".equals(exploreChoice) || "east".equals(exploreChoice)) {
-                    System.out.println("Can't go there.");
-                    TextAdventure.worldChoice(1);
-                } else if ("west".equals(exploreChoice)) {
-                    Player.currentRoom = 1;
-                } else if ("south".equals(exploreChoice)) {
-                    Player.currentRoom = 4;
-                }
-            }
-        }
+    String getRoomDescription() {
+        return roomDescription;
+    }
+
+    void setRoomDescription(String rd) {
+
     }
 
     Room(String n, int r) {
