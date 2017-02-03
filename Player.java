@@ -4,8 +4,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Player {
-    static ArrayList<Item> inventory = new ArrayList<>();
-
+    static int currentRoom;
     static int archetype;
     static double levelRaw = 1.0;
     static String classType;

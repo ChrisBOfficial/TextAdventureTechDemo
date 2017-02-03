@@ -8,9 +8,16 @@ import java.util.ArrayList;
 /*4595556e1cde9eac9e1cc98843a6ef94227b0e6c29e8f042be61600765e59ed*/
 
 public class TextAdventure {
+    static int directionFlag;
+    private static Location Church = new Location("Church", "Welcome to the Church!");
+    private static Room Church_1 = new Room("Northwest", 1);
+    static Room Church_2 = new Room("Northeast", 2);
+    static Room Church_3 = new Room("Southwest", 3);
+    static Room Church_4 = new Room("Southeast", 4);
     private static Scanner scan = new Scanner(System.in);
     private static int runWorked = 0;
     private static String yesOrNo = "|1. YES | 2. NO|";
+    private static String worldOptions = "|1. EXPLORE | 2. INVENTORY | 3. LORE |";
 
     private static int nextInt(int x) {
         do {
@@ -190,19 +197,31 @@ public class TextAdventure {
         }
     }
 
+    static void worldChoice(int x) {
+        switch (x) {
+            case 1:
+                System.out.println("What direction?");
+                System.out.println("NORTH EAST SOUTH WEST");
+                break;
+            case 2:
+                System.out.print("Your items: ");
+                Inventory.printItems();
+                break;
+            case 3:
+
+                break;
+        }
+    }
+
     static int affixMake() {
         return (int)(Math.random() * 100);
     }
 
     public static void main (String[] str) throws IOException {
+        Player.currentRoom = 1;
         Item churchKey = new Item ("Church Key", "79ed689e6714525a401b0acf19d2ac5");
         Inventory.addItems(churchKey);
         Door churchEntrance = new Door("79ed689e6714525a401b0acf19d2ac5");
-        Location Church = new Location("Church", "Welcome to the Church!");
-        Room Church_1 = new Room("Northwest");
-        Room Church_2 = new Room("Northeast");
-        Room Church_3 = new Room("Southwest");
-        Room Church_4 = new Room("Southeast");
 
         System.out.println("                                      /|\n" +
                 "                                     |\\|\n" +
@@ -298,12 +317,24 @@ public class TextAdventure {
         for(Item x: Inventory.items) {
             if(x.getCode().equals(churchEntrance.getLock())) {
                 Inventory.items.remove(x);
-                //Church();
+                Church(Player.currentRoom);
                 break;
             }
             else
                 System.out.println("Door is locked.");
         }
+
+    }
+    private static void Church(int pos) {
+        Player.currentRoom = 1;
+        System.out.println(Church.getIntroduction());
+        System.out.println("What do you wish to do?\n");
+        optionsBorder(worldOptions);
+        int choice = 0;
+        nextInt(choice);
+        worldChoice(choice);
+        String exploreChoice = scan.nextLine().toLowerCase();
+        Church_1.chooseDirection(exploreChoice);
 
     }
 }
