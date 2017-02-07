@@ -92,7 +92,10 @@ public class TextAdventure {
         } while (itemChoice == 0);
         //Uses selected item and modifies monster's stats accordingly
         Inventory.items.get(itemChoice - 1).useItem(Monster);
-        System.out.println("You use " + Inventory.items.get(itemChoice - 1));
+        if(Inventory.items.get(itemChoice - 1).getCombatUse())
+            System.out.println("You use " + Inventory.items.get(itemChoice - 1));
+        else
+            System.out.println("You can't use that item in combat.");
         timerDelay(500);
     }
 
@@ -123,6 +126,7 @@ public class TextAdventure {
 
     private static void combatOptions(String monsterName) {
         System.out.println(Artwork.getArtwork(monsterName));
+        timerDelay(250);
         System.out.println("\n---------------------------------" +
                 "\n| 1. ATTACK | 2. ITEM | 3. RUN | " +
                 "\n---------------------------------\n");
@@ -178,11 +182,16 @@ public class TextAdventure {
 
     private static void combatResult(Monster Monster, double exp) {
         if(Player.HP > 0 && Monster.HP <= 0) {
+            Player.setLevel(exp);
             System.out.println("\nYou win! Current level - " + (int)Player.levelRaw);
             Player.HP = Player.maxHP;
         } else if (Monster.HP > 0 && Player.HP <= 0) {
             Player.setLevel(-exp);
             System.out.println("\nYou lost... Current level - " + (int)Player.levelRaw);
+            Player.humanity--;
+            if(Player.humanity <= 0) {
+                System.exit(0);
+            }
         } else
             System.out.print("");
         levelUpCheck(Monster.xpVal);
@@ -196,6 +205,7 @@ public class TextAdventure {
             System.out.println("Level up! Your stats have increased.");
             Player.classChoice(Player.archetype);
             Player.HP = Player.maxHP;
+            Player.humanity++;
             timerDelay(500);
             System.out.println("New level - " + (int)Player.levelRaw);
         }
@@ -376,10 +386,10 @@ public class TextAdventure {
 
         combatStart(imp);
         timerDelay(1000);
-        System.out.println("You find a net from the corpse of the imp. Net added to your inventory.");
+        System.out.println("\nYou find a net from the corpse of the imp. Net added to your inventory.");
 
         timerDelay(500);
-        System.out.println("You move past the imp and find a door in front of you. Attempt to open...");
+        System.out.println("\nYou move past the imp and find a door in front of you. Attempt to open...");
         timerDelay(750);
 
         for(Item x: Inventory.items) {
@@ -400,7 +410,7 @@ public class TextAdventure {
 
         System.out.println(Church.getIntroduction());
 
-        System.out.println("What do you wish to do?\n");
+        System.out.println("\nWhat do you wish to do?\n");
         optionsBorder(worldOptions);
 
         int life = 0;

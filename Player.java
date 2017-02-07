@@ -10,6 +10,7 @@ public class Player {
     static String classType;
     static int oldLevel;
 
+    static int humanity = 5;
     static double HP = 10;
     static double maxHP = 10;
     static double damage = 1;

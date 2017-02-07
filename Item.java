@@ -6,17 +6,24 @@ public class Item {
     private int armorClassMod;
     private double speedMod;
     private String code = "";
+    private boolean combatUse;
 
     Item (String n, int atkMod, int acMod, double sMod) {
         name = n;
         attackMod = atkMod;
         armorClassMod = acMod;
         speedMod = sMod;
+        combatUse = true;
     }
 
     Item (String n, String c) {
         name = n;
         code = c;
+        combatUse = false;
+    }
+
+    boolean getCombatUse() {
+        return combatUse;
     }
 
     String getCode() {
