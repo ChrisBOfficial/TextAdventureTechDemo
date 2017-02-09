@@ -15,7 +15,7 @@ public class Player {
     static double maxHP = 10;
     static double damage = 1;
     static double speed = 1;
-    private static int attack = 0;
+    static int attack = 0;
     static int armorClass = 10;
     static int makeAttack;
 

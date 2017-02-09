@@ -1,10 +1,7 @@
-//TODO: Items, Inventory management OOC, Add story
 import java.io.IOException;
 import java.lang.*;
-import java.lang.reflect.Array;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.ArrayList;
 /*4595556e1cde9eac9e1cc98843a6ef94227b0e6c29e8f042be61600765e59ed*/
 
 public class TextAdventure {
@@ -16,8 +13,8 @@ public class TextAdventure {
     private static Room Church_4 = new Room("Southeast", 4);
     private static Scanner scan = new Scanner(System.in);
     private static int runWorked = 0;
-    private static String yesOrNo = "|1. YES | 2. NO|";
-    private static String worldOptions = "|1. EXPLORE | 2. SEE INVENTORY | 3. LORE |";
+    private static String yesOrNo = "|1. YES | 2. NO |";
+    private static String worldOptions = "|1. EXPLORE | 2. VIEW INVENTORY | 3. LORE |";
 
     private static int nextInt(int x) {
         do {
@@ -91,12 +88,20 @@ public class TextAdventure {
             scan.nextLine();
         } while (itemChoice == 0);
         //Uses selected item and modifies monster's stats accordingly
-        Inventory.items.get(itemChoice - 1).useItem(Monster);
-        if(Inventory.items.get(itemChoice - 1).getCombatUse())
-            System.out.println("You use " + Inventory.items.get(itemChoice - 1));
-        else
-            System.out.println("You can't use that item in combat.");
-        timerDelay(500);
+        if(itemChoice - 1 < Inventory.playerItems.size()) {
+            if(!Inventory.playerItems.get(itemChoice - 1).selfUse) {
+                Inventory.playerItems.get(itemChoice - 1).useItem(Monster);
+            } else
+                Inventory.playerItems.get(itemChoice - 1).useItem();
+            if(Inventory.playerItems.get(itemChoice - 1).getCombatUse()) {
+                System.out.println("You use " + Inventory.playerItems.get(itemChoice - 1));
+                Inventory.playerItems.remove(itemChoice - 1);
+            } else
+                System.out.println("You can't use that item in combat.");
+            timerDelay(500);
+        } else
+            System.out.println("There is no item there.");
+
     }
 
     private static void run(double s, double monS) {
@@ -184,11 +189,12 @@ public class TextAdventure {
         if(Player.HP > 0 && Monster.HP <= 0) {
             Player.setLevel(exp);
             System.out.println("\nYou win! Current level - " + (int)Player.levelRaw);
-            Player.HP = Player.maxHP;
+            //Player.HP = Player.maxHP;
         } else if (Monster.HP > 0 && Player.HP <= 0) {
             Player.setLevel(-exp);
             System.out.println("\nYou lost... Current level - " + (int)Player.levelRaw);
             Player.humanity--;
+            System.out.println("\nYou have lost 1 Humanity");
             if(Player.humanity <= 0) {
                 System.exit(0);
             }
@@ -216,14 +222,24 @@ public class TextAdventure {
             case 1:
                 System.out.println("What direction?");
                 System.out.println("NORTH EAST SOUTH WEST");
+
                 String exploreChoice = scan.nextLine().toLowerCase();
                 explore(exploreChoice, r);
+
                 break;
             case 2:
-                System.out.println("Your items: ");
+                System.out.println("Your playerItems: ");
                 Inventory.printItems();
+
                 break;
             case 3:
+                System.out.println("What category?");
+
+                optionsBorder(Lore.loreCategories);
+                int loreChoice = 0;
+                loreChoice = nextInt(loreChoice);
+
+                Lore.choice(loreChoice);
 
                 break;
         }
@@ -299,53 +315,55 @@ public class TextAdventure {
         Player.currentRoom = 1;
         Item churchKey = new Item ("Church Key", "79ed689e6714525a401b0acf19d2ac5");
         Inventory.addItems(churchKey);
+        HealthPotion minorHealth = new HealthPotion("Minor Health Potion", 5);
         Door churchEntrance = new Door("79ed689e6714525a401b0acf19d2ac5");
 
-        System.out.println("                                      /|\n" +
-                "                                     |\\|\n" +
-                "                                     |||\n" +
-                "                                     |||\n" +
-                "                                     |||\n" +
-                "                                     |||\n" +
-                "                                     |||\n" +
-                "                                     |||\n" +
-                "                                  ~-[{o}]-~\n" +
-                "                                     |/|\n" +
-                "              ___                    |/|\n" +
-                "             ///~`     |\\\\_          `0'         =\\\\\\\\         . .\n" +
-                "            ,  |='  ,))\\_| ~-_                    _)  \\      _/_/|\n" +
-                "           / ,' ,;((((((    ~ \\                  `~~~\\-~-_ /~ (_/\\\n" +
-                "         /' -~/~)))))))'\\_   _/'                      \\_  /'  D   |\n" +
-                "        (       (((((( ~-/ ~-/                          ~-;  /    \\--_\n" +
-                "         ~~--|   ))''    ')  `                            `~~\\_    \\   )\n" +
-                "             :        (_  ~\\           ,                    /~~-     ./\n" +
-                "              \\        \\_   )--__  /(_/)                   |    )    )|\n" +
-                "    ___       |_     \\__/~-__    ~~   ,'      /,_;,   __--(   _/      |\n" +
-                "  //~~\\`\\    /' ~~~----|     ~~~~~~~~'        \\-  ((~~    __-~        |\n" +
-                "((()   `\\`\\_(_     _-~~-\\                      ``~~ ~~~~~~   \\_      /\n" +
-                " )))     ~----'   /      \\                                   )       )\n" +
-                "  (         ;`~--'        :                                _-    ,;;(\n" +
-                "            |    `\\       |                             _-~    ,;;;;)\n" +
-                "            |    /'`\\     ;                          _-~          _/\n" +
-                "           /~   /    |    )                         /;;;''  ,;;:-~\n" +
-                "          |    /     / | /                         |;;'   ,''\n" +
-                "          /   /     |  \\\\|                         |   ,;(\n" +
-                "        _/  /'       \\  \\_)                   .---__\\_    \\,--._______\n" +
-                "       ( )|'         (~-_|                   (;;'  ;;;~~~/' `;;|  `;;;\\\n" +
-                "        ) `\\_         |-_;;--__               ~~~----__/'    /'_______/\n" +
-                "        `----'       (   `~--_ ~~~;;------------~~~~~ ;;;'_/'\n" +
-                "                     `~~~~~~~~'~~~-----....___;;;____---~~\n");
+        System.out.println("`\"-._                    \n" +
+                "                      `. \"-._                \n" +
+                "                        T.   \"-.             \n" +
+                "                         $$p.   \"-.          \n" +
+                "                         $$$$b.    `,        \n" +
+                "                      .g$$$$$$$b    ;        \n" +
+                "                    .d$$$$$$$$$$;   ;        \n" +
+                "                 __d$$$$$$P\"\"^T$$   :        \n" +
+                "               .d$$$$P^^\"\"___       :        \n" +
+                "              d$P'__..gg$$$$$$$$$$; ;        \n" +
+                "             d$$ :$$$$$$$$$$$$$$$$;  ;       \n" +
+                "            :$$; $$$$$$$$$$$$$$$$P  :$       \n" +
+                "            $$$  $$$$$$$$$$$$$$$$b  $$       \n" +
+                "           :$$$ :$$$$$$$$$$$$$$$$$; $$;      \n" +
+                "           $$$; $$$$$$$$$$$$$$$$$$; $$;      \n" +
+                "          :$$$  $$$$$$$$$^$$$$$$$$$ :$$      \n" +
+                "          $$$; :$$$p__gP' `Tp__g$$$ :$$      \n" +
+                "         :$$$  $$P`T$P' .$. `T$P'T$; $$;     \n" +
+                "         $$$; :$$;     :P^T;     :$; $$;     \n" +
+                "        :$$$  $$$$-.           .-$$$ :$$     \n" +
+                "        $$$$ :$$$$; \\   T$P   / :$$$  $$     \n" +
+                "       :$$$; $$$$$$  ; b:$;d :  $$$$; $$;    \n" +
+                "       $$$$; $$$$$$; : T T T ; :$$$$$ :$$    \n" +
+                "    .g$$$$$  :$$$$$$  ;' | ':  $$$$$$  T$b   \n" +
+                " .g$$$$$$$$   $$$$$$b :     ; d$$$$$;   `Tb  \n" +
+                ":$$$$$$$$$;   :$$$$$$$;     :$$$$$$P       \\ \n" +
+                ":$$$$$$$$$;    T$$$$$$$p._.g$$$$$$P         ;\n" +
+                "$$$P^^T$$$$p.   `T$$$$$$$$$$$$$$P'     _/`. :\n" +
+                "       `T$$$$$b.  `T$$$$$$$$$$P'    .g$P   \\;\n" +
+                "         `T$$$$$b.  \"^T$$$$P^\"     d$P'      \n" +
+                "           `T$$$$$b.             .dP'        \n" +
+                "             \"^T$$$$b.        .g$P'          \n" +
+                "                \"^T$$$b    .g$P^\"            \n" +
+                "                   \"^T$b.g$P^\"               \n" +
+                "                      \"^$^\" ");
 
         System.out.println("Welcome to the TextAdventure TechDemo. What is your name?");
         String playerName = scan.nextLine();
 
         System.out.println("Welcome " + playerName + ", which archetype would you like?\n");
-        int uh = 0;
+        int cont = 0;
         do {
             try {
                 System.out.println("| 1. WARRIOR | 2. THIEF | 3. KNIGHT |\n");
                 int chosenClass = scan.nextInt();
-                uh = chosenClass;
+                cont = chosenClass;
                 Player.setArch(chosenClass);
                 Player.classChoice(chosenClass);
             } catch (InputMismatchException e) {
@@ -353,17 +371,19 @@ public class TextAdventure {
                 timerDelay(750);
             }
             scan.nextLine();
-        } while (uh == 0);
+        } while (cont == 0);
+
+        Inventory.addItems(minorHealth);
 
         System.out.println("Welcome " + Player.classType + ". Now we need to acquaint you with combat.\n\n" +
                            "| 1. Uh oh. | 2. I'm ready! | 3. No thank you... |\n");
         Monster tutorialCreature = new Monster("Skeleton",1,1,1.1, 10);
-        int meh = 0;
+        cont = 0;
         int c = 0;
 
         do {
             try {
-                meh = scan.nextInt();
+                cont = scan.nextInt();
             } catch (InputMismatchException e) {
                 if(c % 3 == 0 && c != 0)
                     System.out.println("Do you want to play or not?!");
@@ -371,7 +391,7 @@ public class TextAdventure {
                 c++;
             }
             scan.nextLine();
-        } while (meh == 0);
+        } while (cont == 0);
         System.out.println("Great! You see a level " + tutorialCreature.level + " " + tutorialCreature.affixName +
                            tutorialCreature.getName() + "! What do you wish to do?\n");
 
@@ -392,9 +412,9 @@ public class TextAdventure {
         System.out.println("\nYou move past the imp and find a door in front of you. Attempt to open...");
         timerDelay(750);
 
-        for(Item x: Inventory.items) {
+        for(Item x: Inventory.playerItems) {
             if(x.getCode().equals(churchEntrance.getLock())) {
-                Inventory.items.remove(x);
+                Inventory.playerItems.remove(x);
                 Church(Player.currentRoom);
                 break;
             }
@@ -404,7 +424,7 @@ public class TextAdventure {
 
     }
     private static void Church(int pos) {
-        Item net = new Item("Net", 3, 0, 0);
+        Item net = new Item("Net", 3, 0, 0,false);
         Inventory.addItems(net);
         Player.currentRoom = pos;
 
@@ -413,9 +433,9 @@ public class TextAdventure {
         System.out.println("\nWhat do you wish to do?\n");
         optionsBorder(worldOptions);
 
-        int life = 0;
-        life = nextInt(life);
-        worldChoice(life, Church_1);
+        int choice = 0;
+        choice = nextInt(choice);
+        worldChoice(choice, Church_1);
 
 
     }

@@ -1,5 +1,3 @@
-import javax.xml.soap.Text;
-
 class Location {
     String name;
     private String introduction;
