@@ -22,6 +22,7 @@ class Location {
 }
 
 class Room extends Location {
+    int visits = 0;
     private String roomDescription;
     int roomLoc;
 

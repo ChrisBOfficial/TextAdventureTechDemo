@@ -228,7 +228,7 @@ public class TextAdventure {
 
                 break;
             case 2:
-                System.out.println("Your playerItems: ");
+                System.out.println("Your items: ");
                 Inventory.printItems();
 
                 break;
@@ -405,16 +405,16 @@ public class TextAdventure {
                            "! What do you wish to do?\n");
 
         combatStart(imp);
-        timerDelay(1000);
-        System.out.println("\nYou find a net from the corpse of the imp. Net added to your inventory.");
 
-        timerDelay(500);
+        timerDelay(750);
         System.out.println("\nYou move past the imp and find a door in front of you. Attempt to open...");
         timerDelay(750);
+        System.out.println("\nEnd of tutorial!");
 
         for(Item x: Inventory.playerItems) {
             if(x.getCode().equals(churchEntrance.getLock())) {
                 Inventory.playerItems.remove(x);
+                Player.currentRoom = 1;
                 Church(Player.currentRoom);
                 break;
             }
@@ -423,20 +423,60 @@ public class TextAdventure {
         }
 
     }
-    private static void Church(int pos) {
-        Item net = new Item("Net", 3, 0, 0,false);
-        Inventory.addItems(net);
-        Player.currentRoom = pos;
 
-        System.out.println(Church.getIntroduction());
+    private static void Church(int x) {
+        switch (x) {
+            case 1:
+                Church_1();
+                break;
+            case 2:
+                Church_2();
+                break;
+            case 3:
+                Church_3();
+                break;
+            case 4:
+                Church_4();
+                break;
+        }
+    }
+    private static void Church_1() {
+        System.out.println();
+
+        if(Church_1.visits == 0) {
+            System.out.println(Church.getIntroduction());
+            Item net = new Item("Net", 3, 0, 0,false);
+            System.out.println("\nYou find a net from the corpse of the imp. Net added to your inventory.");
+            Inventory.addItems(net);
+        }
 
         System.out.println("\nWhat do you wish to do?\n");
+        Church_1.visits++;
         optionsBorder(worldOptions);
 
         int choice = 0;
         choice = nextInt(choice);
         worldChoice(choice, Church_1);
 
+        Church(Player.currentRoom);
+    }
+    private static void Church_2() {
+        System.out.println("You see a door in front of you, and the rest of the Church around you.");
+
+        System.out.println("\nWhat do you wish to do?\n");
+        Church_2.visits++;
+        optionsBorder(worldOptions);
+
+        int choice = 0;
+        choice = nextInt(choice);
+        worldChoice(choice, Church_2);
+
+        Church(Player.currentRoom);
+    }
+    private static void Church_3() {
+
+    }
+    private static void Church_4() {
 
     }
 }
