@@ -15,6 +15,7 @@ class Inventory {
             System.out.print(c + ": " + x.name + " ");
         }
         System.out.println("");
+        TextAdventure.timerDelay(750);
     }
 
 }

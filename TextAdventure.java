@@ -424,6 +424,18 @@ public class TextAdventure {
 
     }
 
+    private static void endChurch(Room Room) {
+        System.out.println("\nWhat do you wish to do?\n");
+        Room.visits++;
+        optionsBorder(worldOptions);
+
+        int choice = 0;
+        choice = nextInt(choice);
+        worldChoice(choice, Room);
+
+        Church(Player.currentRoom);
+    }
+
     private static void Church(int x) {
         switch (x) {
             case 1:
@@ -440,8 +452,10 @@ public class TextAdventure {
                 break;
         }
     }
+
     private static void Church_1() {
-        System.out.println();
+        System.out.println("A large hallway extends before you. Stone pillars line the walls, a staircase to the east " +
+                           "and a chest to the south.");
 
         if(Church_1.visits == 0) {
             System.out.println(Church.getIntroduction());
@@ -450,31 +464,18 @@ public class TextAdventure {
             Inventory.addItems(net);
         }
 
-        System.out.println("\nWhat do you wish to do?\n");
-        Church_1.visits++;
-        optionsBorder(worldOptions);
-
-        int choice = 0;
-        choice = nextInt(choice);
-        worldChoice(choice, Church_1);
-
-        Church(Player.currentRoom);
+        endChurch(Church_1);
     }
+
     private static void Church_2() {
         System.out.println("You see a door in front of you, and the rest of the Church around you.");
 
-        System.out.println("\nWhat do you wish to do?\n");
-        Church_2.visits++;
-        optionsBorder(worldOptions);
-
-        int choice = 0;
-        choice = nextInt(choice);
-        worldChoice(choice, Church_2);
-
-        Church(Player.currentRoom);
+        endChurch(Church_2);
     }
     private static void Church_3() {
+        System.out.println();
 
+        endChurch(Church_3);
     }
     private static void Church_4() {
 

@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="049a7fcd-a218-43d9-81b2-d606e452c8d1" name="Default" comment="Creating locations, work in progress don't hate me.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Room.class" afterPath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Room.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/TextAdventure.class" afterPath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/TextAdventure.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Location.java" afterPath="$PROJECT_DIR$/Location.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextAdventure.java" afterPath="$PROJECT_DIR$/TextAdventure.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +22,8 @@
       <file leaf-file-name="TextAdventure.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TextAdventure.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="470" column="36" lean-forward="true" selection-start-line="470" selection-start-column="36" selection-end-line="470" selection-end-column="36" />
+            <state relative-caret-position="491">
+              <caret line="477" column="28" lean-forward="false" selection-start-line="477" selection-start-column="28" selection-end-line="477" selection-end-column="28" />
               <folding>
                 <element signature="method#nextInt#0;class#TextAdventure#0" expanded="false" />
                 <element signature="method#timerDelay#0;class#TextAdventure#0" expanded="false" />
@@ -41,8 +37,10 @@
                 <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
                 <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
                 <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-                <marker date="1486670696000" expanded="false" signature="11622:13966" ph="..." />
-                <marker date="1486670696000" expanded="true" signature="13966:14054" ph="..." />
+                <element signature="method#worldChoice#0;class#TextAdventure#0" expanded="false" />
+                <element signature="method#explore#0;class#TextAdventure#0" expanded="false" />
+                <element signature="method#endChurch#0;class#TextAdventure#0" expanded="false" />
+                <element signature="method#Church#0;class#TextAdventure#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -137,6 +135,7 @@
       <find>playerP</find>
       <find>getArt</find>
       <find>remove</find>
+      <find>Choice</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -182,7 +181,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -197,8 +195,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -603,8 +602,10 @@
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1486670696000" expanded="false" signature="11622:13966" ph="..." />
-            <marker date="1486670696000" expanded="true" signature="13966:14054" ph="..." />
+            <element signature="method#worldChoice#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#explore#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#endChurch#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#Church#0;class#TextAdventure#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -674,8 +675,10 @@
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1486670696000" expanded="false" signature="11622:13966" ph="..." />
-            <marker date="1486670696000" expanded="true" signature="13966:14054" ph="..." />
+            <element signature="method#worldChoice#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#explore#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#endChurch#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#Church#0;class#TextAdventure#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -745,8 +748,10 @@
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1486670696000" expanded="false" signature="11622:13966" ph="..." />
-            <marker date="1486670696000" expanded="true" signature="13966:14054" ph="..." />
+            <element signature="method#worldChoice#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#explore#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#endChurch#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#Church#0;class#TextAdventure#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -816,8 +821,10 @@
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1486670696000" expanded="false" signature="11622:13966" ph="..." />
-            <marker date="1486670696000" expanded="true" signature="13966:14054" ph="..." />
+            <element signature="method#worldChoice#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#explore#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#endChurch#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#Church#0;class#TextAdventure#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -887,8 +894,10 @@
             <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1486670696000" expanded="false" signature="11622:13966" ph="..." />
-            <marker date="1486670696000" expanded="true" signature="13966:14054" ph="..." />
+            <element signature="method#worldChoice#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#explore#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#endChurch#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#Church#0;class#TextAdventure#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -973,29 +982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TextAdventure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="470" column="36" lean-forward="true" selection-start-line="470" selection-start-column="36" selection-end-line="470" selection-end-column="36" />
-          <folding>
-            <element signature="method#nextInt#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#timerDelay#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#attack#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#healthStats#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#item#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#run#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#optionsBorder#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#combatOptions#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#combatStart#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1486670696000" expanded="false" signature="11622:13966" ph="..." />
-            <marker date="1486670696000" expanded="true" signature="13966:14054" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lore.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -1022,14 +1008,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Location.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Inventory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -1051,6 +1029,39 @@
         <state relative-caret-position="40">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Location.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TextAdventure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="477" column="28" lean-forward="false" selection-start-line="477" selection-start-column="28" selection-end-line="477" selection-end-column="28" />
+          <folding>
+            <element signature="method#nextInt#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#timerDelay#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#attack#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#healthStats#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#item#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#run#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#optionsBorder#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#combatOptions#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#combatStart#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#worldChoice#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#explore#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#endChurch#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#Church#0;class#TextAdventure#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
