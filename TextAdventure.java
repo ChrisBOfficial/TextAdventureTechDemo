@@ -6,14 +6,23 @@ import java.util.Scanner;
 
 public class TextAdventure {
     private static int directionFlag;
+
     private static Location Church = new Location("Church", "Welcome to the Church!");
     private static Room Church_1 = new Room("Northwest", 1);
     private static Room Church_2 = new Room("Northeast", 2);
     private static Room Church_3 = new Room("Southwest", 3);
     private static Room Church_4 = new Room("Southeast", 4);
+
+    private static Location Garden = new Location("Garden", "Welcome to the Garden!");
+    private static Room Garden_1 = new Room("Northwest", 1);
+    private static Room Garden_2 = new Room("Northeast", 2);
+    private static Room Garden_3 = new Room("Southwest", 3);
+    private static Room Garden_4 = new Room("Southeast", 4);
+
     private static Scanner scan = new Scanner(System.in);
+
     private static int runWorked = 0;
-    private static String yesOrNo = "|1. YES | 2. NO |";
+
     private static String worldOptions = "|1. EXPLORE | 2. VIEW INVENTORY | 3. LORE |";
 
     private static int nextInt(int x) {
@@ -221,7 +230,7 @@ public class TextAdventure {
         switch (x) {
             case 1:
                 System.out.println("What direction?");
-                System.out.println("NORTH EAST SOUTH WEST");
+                optionsBorder("| NORTH | EAST | SOUTH | WEST |");
 
                 String exploreChoice = scan.nextLine().toLowerCase();
                 explore(exploreChoice, r);
@@ -278,14 +287,16 @@ public class TextAdventure {
             }
         } else if(r.roomLoc == 3) {
             directionFlag = 0;
-            while (TextAdventure.directionFlag == 0) {
+            while (directionFlag == 0) {
                 if ("south".equals(exploreChoice) || "west".equals(exploreChoice)) {
                     System.out.println("Can't go there.");
                     directionFlag = 1;
                     worldChoice(1, r);
                 } else if ("north".equals(exploreChoice)) {
+                    directionFlag = 1;
                     Player.currentRoom = 1;
                 } else if ("east".equals(exploreChoice)) {
+                    directionFlag = 1;
                     Player.currentRoom = 4;
                 }
             }
@@ -361,7 +372,7 @@ public class TextAdventure {
         int cont = 0;
         do {
             try {
-                System.out.println("| 1. WARRIOR | 2. THIEF | 3. KNIGHT |\n");
+                optionsBorder("| 1. WARRIOR | 2. THIEF | 3. KNIGHT |");
                 int chosenClass = scan.nextInt();
                 cont = chosenClass;
                 Player.setArch(chosenClass);
@@ -424,7 +435,7 @@ public class TextAdventure {
 
     }
 
-    private static void endChurch(Room Room) {
+    private static void endRoom(Room Room) {
         System.out.println("\nWhat do you wish to do?\n");
         Room.visits++;
         optionsBorder(worldOptions);
@@ -432,8 +443,6 @@ public class TextAdventure {
         int choice = 0;
         choice = nextInt(choice);
         worldChoice(choice, Room);
-
-        Church(Player.currentRoom);
     }
 
     private static void Church(int x) {
@@ -454,30 +463,142 @@ public class TextAdventure {
     }
 
     private static void Church_1() {
-        System.out.println("A large hallway extends before you. Stone pillars line the walls, a staircase to the east " +
-                           "and a chest to the south.");
-
         if(Church_1.visits == 0) {
             System.out.println(Church.getIntroduction());
             Item net = new Item("Net", 3, 0, 0,false);
             System.out.println("\nYou find a net from the corpse of the imp. Net added to your inventory.");
             Inventory.addItems(net);
         }
+        System.out.println("A large hallway extends before you. Stone pillars line the walls, a staircase to the east " +
+                "and a chest to the south.");
 
-        endChurch(Church_1);
+        endRoom(Church_1);
+        Church(Player.currentRoom);
     }
 
     private static void Church_2() {
-        System.out.println("You see a door in front of you, and the rest of the Church around you.");
+        System.out.println("You see a door to the east, and a guard to the south.");
+        System.out.println("\nWhat do you wish to do?\n");
+        Church_2.visits++;
+        optionsBorder(worldOptions);
 
-        endChurch(Church_2);
+        int choice = 0;
+        choice = nextInt(choice);
+        switch (choice) {
+            case 1:
+                System.out.println("What direction?");
+                optionsBorder("| NORTH | EAST | SOUTH | WEST |");
+
+                String exploreChoice = scan.nextLine().toLowerCase();
+                directionFlag = 0;
+                while (directionFlag == 0) {
+                    if ("north".equals(exploreChoice)) {
+                        System.out.println("Can't go there.");
+                        directionFlag = 1;
+                    } else if ("east".equals(exploreChoice)) {
+                        directionFlag = 1;
+                        Garden_1();
+                    } else if ("south".equals(exploreChoice)) {
+                        directionFlag = 1;
+                        Player.currentRoom = 4;
+                    } else if ("west".equals(exploreChoice)) {
+                        directionFlag = 1;
+                        Player.currentRoom = 1;
+                    }
+                }
+
+                break;
+            case 2:
+                System.out.println("Your items: ");
+                Inventory.printItems();
+
+                break;
+            case 3:
+                System.out.println("What category?");
+
+                optionsBorder(Lore.loreCategories);
+                int loreChoice = 0;
+                loreChoice = nextInt(loreChoice);
+
+                Lore.choice(loreChoice);
+
+                break;
+        }
+
+        Church(Player.currentRoom);
     }
+
     private static void Church_3() {
-        System.out.println();
+        Monster churchSkel = new Monster("Skeleton", 1, 1, 1.1, 10);
+        Monster churchSkel_2 = new Monster("Skeleton", 1, 1, 1.1, 10);
+        if(Church_3.visits == 0) {
+            Item crucifix = new Item("Crucifix", 0, 3, 0, false);
+            Inventory.playerItems.add(crucifix);
 
-        endChurch(Church_3);
+            System.out.println("You see a chest and open it. Inside there was...");
+            timerDelay(750);
+            System.out.println("A Crucifix!");
+            timerDelay(500);
+
+            System.out.println("You're ambushed by two skeletons!");
+            combatStart(churchSkel);
+            System.out.println("The second skeleton attacks!");
+            timerDelay(500);
+            combatStart(churchSkel_2);
+        }
+
+        endRoom(Church_3);
+        Church(Player.currentRoom);
     }
-    private static void Church_4() {
 
+    private static void Church_4() {
+        if(Church_4.visits == 0) {
+
+        }
+
+        endRoom(Church_4);
+        Church(Player.currentRoom);
+    }
+
+
+    private static void Garden(int x) {
+        switch (x) {
+            case 1:
+                Garden_1();
+                break;
+            case 2:
+                Garden_2();
+                break;
+            case 3:
+                Garden_3();
+                break;
+            case 4:
+                Garden_4();
+                break;
+        }
+    }
+
+    private static void Garden_1() {
+        if(Garden_1.visits == 0) {
+            System.out.println(Garden.getIntroduction());
+        }
+
+        endRoom(Garden_1);
+        Garden(Player.currentRoom);
+    }
+    private static void Garden_2() {
+
+        endRoom(Garden_2);
+        Garden(Player.currentRoom);
+    }
+    private static void Garden_3() {
+
+        endRoom(Garden_3);
+        Garden(Player.currentRoom);
+    }
+    private static void Garden_4() {
+
+        endRoom(Garden_4);
+        Garden(Player.currentRoom);
     }
 }

@@ -23,16 +23,7 @@ class Location {
 
 class Room extends Location {
     int visits = 0;
-    private String roomDescription;
     int roomLoc;
-
-    String getRoomDescription() {
-        return roomDescription;
-    }
-
-    void setRoomDescription(String rd) {
-
-    }
 
     Room(String n, int r) {
         name = n + " " + name;
