@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="049a7fcd-a218-43d9-81b2-d606e452c8d1" name="Default" comment="Creating locations, work in progress don't hate me.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Inventory.class" afterPath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Inventory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Room.class" afterPath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Room.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/TextAdventure.class" afterPath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/TextAdventure.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Location.java" afterPath="$PROJECT_DIR$/Location.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Artwork.java" afterPath="$PROJECT_DIR$/Artwork.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextAdventure.java" afterPath="$PROJECT_DIR$/TextAdventure.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,8 +23,8 @@
       <file leaf-file-name="TextAdventure.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TextAdventure.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="555" column="0" lean-forward="false" selection-start-line="555" selection-start-column="0" selection-end-line="555" selection-end-column="0" />
+            <state relative-caret-position="760">
+              <caret line="140" column="58" lean-forward="false" selection-start-line="140" selection-start-column="58" selection-end-line="140" selection-end-column="58" />
               <folding>
                 <element signature="method#nextInt#0;class#TextAdventure#0" expanded="false" />
                 <element signature="method#timerDelay#0;class#TextAdventure#0" expanded="false" />
@@ -49,8 +45,9 @@
                 <element signature="method#Church_1#0;class#TextAdventure#0" expanded="false" />
                 <element signature="method#Church_2#0;class#TextAdventure#0" expanded="false" />
                 <element signature="method#Church_3#0;class#TextAdventure#0" expanded="false" />
+                <element signature="method#Church_4#0;class#TextAdventure#0" expanded="false" />
                 <element signature="method#Garden#0;class#TextAdventure#0" expanded="false" />
-                <marker date="1487352262000" expanded="false" signature="11970:14312" ph="..." />
+                <marker date="1487706425000" expanded="false" signature="11969:14311" ph="..." />
               </folding>
             </state>
           </provider>
@@ -82,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/Inventory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -103,14 +100,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="20">
               <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-              <folding>
-                <element signature="e#97#98#0" expanded="false" />
-                <element signature="e#132#133#0" expanded="false" />
-                <element signature="e#163#164#0" expanded="false" />
-                <element signature="e#190#191#0" expanded="false" />
-                <element signature="e#294#295#0" expanded="false" />
-                <element signature="e#360#361#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -128,7 +118,7 @@
       <file leaf-file-name="Monster.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Monster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-249">
+            <state relative-caret-position="40">
               <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
               <folding />
             </state>
@@ -176,6 +166,7 @@
         <option value="$PROJECT_DIR$/Location.java" />
         <option value="$PROJECT_DIR$/Inventory.java" />
         <option value="$PROJECT_DIR$/Door.java" />
+        <option value="$PROJECT_DIR$/Artwork.java" />
         <option value="$PROJECT_DIR$/TextAdventure.java" />
       </list>
     </option>
@@ -200,9 +191,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -530,7 +521,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="813" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -615,8 +606,9 @@
             <element signature="method#Church_1#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Church_2#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Church_3#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#Church_4#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Garden#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1487352262000" expanded="false" signature="11970:14312" ph="..." />
+            <marker date="1487706425000" expanded="false" signature="11969:14311" ph="..." />
           </folding>
         </state>
       </provider>
@@ -625,14 +617,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="e#97#98#0" expanded="false" />
-            <element signature="e#132#133#0" expanded="false" />
-            <element signature="e#163#164#0" expanded="false" />
-            <element signature="e#190#191#0" expanded="false" />
-            <element signature="e#294#295#0" expanded="false" />
-            <element signature="e#360#361#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -700,8 +685,9 @@
             <element signature="method#Church_1#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Church_2#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Church_3#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#Church_4#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Garden#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1487352262000" expanded="false" signature="11970:14312" ph="..." />
+            <marker date="1487706425000" expanded="false" signature="11969:14311" ph="..." />
           </folding>
         </state>
       </provider>
@@ -710,14 +696,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="e#97#98#0" expanded="false" />
-            <element signature="e#132#133#0" expanded="false" />
-            <element signature="e#163#164#0" expanded="false" />
-            <element signature="e#190#191#0" expanded="false" />
-            <element signature="e#294#295#0" expanded="false" />
-            <element signature="e#360#361#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -785,8 +764,9 @@
             <element signature="method#Church_1#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Church_2#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Church_3#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#Church_4#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Garden#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1487352262000" expanded="false" signature="11970:14312" ph="..." />
+            <marker date="1487706425000" expanded="false" signature="11969:14311" ph="..." />
           </folding>
         </state>
       </provider>
@@ -795,14 +775,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#97#98#0" expanded="false" />
-            <element signature="e#132#133#0" expanded="false" />
-            <element signature="e#163#164#0" expanded="false" />
-            <element signature="e#190#191#0" expanded="false" />
-            <element signature="e#294#295#0" expanded="false" />
-            <element signature="e#360#361#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -870,8 +843,9 @@
             <element signature="method#Church_1#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Church_2#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Church_3#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#Church_4#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Garden#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1487352262000" expanded="false" signature="11970:14312" ph="..." />
+            <marker date="1487706425000" expanded="false" signature="11969:14311" ph="..." />
           </folding>
         </state>
       </provider>
@@ -880,14 +854,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#97#98#0" expanded="false" />
-            <element signature="e#132#133#0" expanded="false" />
-            <element signature="e#163#164#0" expanded="false" />
-            <element signature="e#190#191#0" expanded="false" />
-            <element signature="e#294#295#0" expanded="false" />
-            <element signature="e#360#361#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -955,8 +922,9 @@
             <element signature="method#Church_1#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Church_2#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Church_3#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#Church_4#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Garden#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1487352262000" expanded="false" signature="11970:14312" ph="..." />
+            <marker date="1487706425000" expanded="false" signature="11969:14311" ph="..." />
           </folding>
         </state>
       </provider>
@@ -965,14 +933,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#97#98#0" expanded="false" />
-            <element signature="e#132#133#0" expanded="false" />
-            <element signature="e#163#164#0" expanded="false" />
-            <element signature="e#190#191#0" expanded="false" />
-            <element signature="e#294#295#0" expanded="false" />
-            <element signature="e#360#361#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1035,64 +996,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding>
-            <element signature="e#97#98#0" expanded="false" />
-            <element signature="e#132#133#0" expanded="false" />
-            <element signature="e#163#164#0" expanded="false" />
-            <element signature="e#190#191#0" expanded="false" />
-            <element signature="e#294#295#0" expanded="false" />
-            <element signature="e#360#361#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LocationDecisions.java" />
     <entry file="file://$PROJECT_DIR$/roomBounds.java" />
-    <entry file="file://$PROJECT_DIR$/Artwork.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="488" column="1" lean-forward="true" selection-start-line="488" selection-start-column="1" selection-end-line="488" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="30" lean-forward="false" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-          <folding>
-            <element signature="method#choice#0;class#Lore#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Location.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-          <folding>
-            <element signature="e#97#98#0" expanded="false" />
-            <element signature="e#132#133#0" expanded="false" />
-            <element signature="e#163#164#0" expanded="false" />
-            <element signature="e#190#191#0" expanded="false" />
-            <element signature="e#294#295#0" expanded="false" />
-            <element signature="e#360#361#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Inventory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Monster.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-249">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1121,10 +1042,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Lore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="30" lean-forward="false" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+          <folding>
+            <element signature="method#choice#0;class#Lore#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Monster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Artwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="217" column="37" lean-forward="true" selection-start-line="217" selection-start-column="37" selection-end-line="217" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TextAdventure.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="555" column="0" lean-forward="false" selection-start-line="555" selection-start-column="0" selection-end-line="555" selection-end-column="0" />
+        <state relative-caret-position="760">
+          <caret line="140" column="58" lean-forward="false" selection-start-line="140" selection-start-column="58" selection-end-line="140" selection-end-column="58" />
           <folding>
             <element signature="method#nextInt#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#timerDelay#0;class#TextAdventure#0" expanded="false" />
@@ -1145,8 +1092,9 @@
             <element signature="method#Church_1#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Church_2#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Church_3#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#Church_4#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Garden#0;class#TextAdventure#0" expanded="false" />
-            <marker date="1487352262000" expanded="false" signature="11970:14312" ph="..." />
+            <marker date="1487706425000" expanded="false" signature="11969:14311" ph="..." />
           </folding>
         </state>
       </provider>

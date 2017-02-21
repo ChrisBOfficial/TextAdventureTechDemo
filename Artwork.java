@@ -214,7 +214,7 @@ class Artwork {
                         "         ?8P?88P \n" +
                         "          V''V' ";
             }
-            if (type.equals("Lich")) {
+            if ("Lich".equals(type) || "Stone Guardian".equals(type)) {
                 return " ,-----.\n" +
                         "   ( <> <> )\n" +
                         "    )_ W _(\n" +

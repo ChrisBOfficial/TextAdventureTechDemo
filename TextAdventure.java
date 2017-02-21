@@ -142,7 +142,7 @@ public class TextAdventure {
         System.out.println(Artwork.getArtwork(monsterName));
         timerDelay(250);
         System.out.println("\n---------------------------------" +
-                "\n| 1. ATTACK | 2. ITEM | 3. RUN | " +
+                "\n| 1. ATTACK | 2. ITEM | 3. RUN |" +
                 "\n---------------------------------\n");
     }
 
@@ -477,7 +477,7 @@ public class TextAdventure {
     }
 
     private static void Church_2() {
-        System.out.println("You see a door to the east, and a guard to the south.");
+        System.out.println("You see a staircase to the east, and a statue to the south.");
         System.out.println("\nWhat do you wish to do?\n");
         Church_2.visits++;
         optionsBorder(worldOptions);
@@ -529,7 +529,7 @@ public class TextAdventure {
     }
 
     private static void Church_3() {
-        Monster churchSkel = new Monster("Skeleton", 1, 1, 1.1, 10);
+        Monster churchSkel = new Monster("Skeleton", 1, 1, 500, 10);
         Monster churchSkel_2 = new Monster("Skeleton", 1, 1, 1.1, 10);
         if(Church_3.visits == 0) {
             Item crucifix = new Item("Crucifix", 0, 3, 0, false);
@@ -552,14 +552,21 @@ public class TextAdventure {
     }
 
     private static void Church_4() {
+        Monster churchStone = new Monster("Stone Guardian", 1, 2, 1.3, 12);
         if(Church_4.visits == 0) {
+            if(Church_3.visits > 0)
+                System.out.println("You see a chest to the west, and the rest of the church around you.");
+            else
+                System.out.println("You see some walls around you, and a staircase to the north.");
+            timerDelay(700);
+            System.out.println("A Stone Guardian breaks out of the wall and attacks you.!");
 
+            combatStart(churchStone);
         }
 
         endRoom(Church_4);
         Church(Player.currentRoom);
     }
-
 
     private static void Garden(int x) {
         switch (x) {
