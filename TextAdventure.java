@@ -1,10 +1,11 @@
-import java.io.IOException;
+import java.io.*;
 import java.lang.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 /*4595556e1cde9eac9e1cc98843a6ef94227b0e6c29e8f042be61600765e59ed*/
 
-public class TextAdventure {
+public class TextAdventure implements Serializable{
+
     private static int directionFlag;
 
     private static Location Church = new Location("Church", "Welcome to the Church!");
@@ -18,6 +19,12 @@ public class TextAdventure {
     private static Room Garden_2 = new Room("Northeast", 2);
     private static Room Garden_3 = new Room("Southwest", 3);
     private static Room Garden_4 = new Room("Southeast", 4);
+
+    private static Location Forest = new Location("Forest", "Welcome to the Forest!");
+    private static Room Forest_1 = new Room("Northwest", 1);
+    private static Room Forest_2 = new Room("Northeast", 2);
+    private static Room Forest_3 = new Room("Southwest", 3);
+    private static Room Forest_4 = new Room("Southeast", 4);
 
     private static Scanner scan = new Scanner(System.in);
 
@@ -243,8 +250,8 @@ public class TextAdventure {
                 break;
             case 3:
                 System.out.println("What category?");
-
                 optionsBorder(Lore.loreCategories);
+
                 int loreChoice = 0;
                 loreChoice = nextInt(loreChoice);
 
@@ -329,42 +336,6 @@ public class TextAdventure {
         HealthPotion minorHealth = new HealthPotion("Minor Health Potion", 5);
         Door churchEntrance = new Door("79ed689e6714525a401b0acf19d2ac5");
 
-        System.out.println("`\"-._                    \n" +
-                "                      `. \"-._                \n" +
-                "                        T.   \"-.             \n" +
-                "                         $$p.   \"-.          \n" +
-                "                         $$$$b.    `,        \n" +
-                "                      .g$$$$$$$b    ;        \n" +
-                "                    .d$$$$$$$$$$;   ;        \n" +
-                "                 __d$$$$$$P\"\"^T$$   :        \n" +
-                "               .d$$$$P^^\"\"___       :        \n" +
-                "              d$P'__..gg$$$$$$$$$$; ;        \n" +
-                "             d$$ :$$$$$$$$$$$$$$$$;  ;       \n" +
-                "            :$$; $$$$$$$$$$$$$$$$P  :$       \n" +
-                "            $$$  $$$$$$$$$$$$$$$$b  $$       \n" +
-                "           :$$$ :$$$$$$$$$$$$$$$$$; $$;      \n" +
-                "           $$$; $$$$$$$$$$$$$$$$$$; $$;      \n" +
-                "          :$$$  $$$$$$$$$^$$$$$$$$$ :$$      \n" +
-                "          $$$; :$$$p__gP' `Tp__g$$$ :$$      \n" +
-                "         :$$$  $$P`T$P' .$. `T$P'T$; $$;     \n" +
-                "         $$$; :$$;     :P^T;     :$; $$;     \n" +
-                "        :$$$  $$$$-.           .-$$$ :$$     \n" +
-                "        $$$$ :$$$$; \\   T$P   / :$$$  $$     \n" +
-                "       :$$$; $$$$$$  ; b:$;d :  $$$$; $$;    \n" +
-                "       $$$$; $$$$$$; : T T T ; :$$$$$ :$$    \n" +
-                "    .g$$$$$  :$$$$$$  ;' | ':  $$$$$$  T$b   \n" +
-                " .g$$$$$$$$   $$$$$$b :     ; d$$$$$;   `Tb  \n" +
-                ":$$$$$$$$$;   :$$$$$$$;     :$$$$$$P       \\ \n" +
-                ":$$$$$$$$$;    T$$$$$$$p._.g$$$$$$P         ;\n" +
-                "$$$P^^T$$$$p.   `T$$$$$$$$$$$$$$P'     _/`. :\n" +
-                "       `T$$$$$b.  `T$$$$$$$$$$P'    .g$P   \\;\n" +
-                "         `T$$$$$b.  \"^T$$$$P^\"     d$P'      \n" +
-                "           `T$$$$$b.             .dP'        \n" +
-                "             \"^T$$$$b.        .g$P'          \n" +
-                "                \"^T$$$b    .g$P^\"            \n" +
-                "                   \"^T$b.g$P^\"               \n" +
-                "                      \"^$^\" ");
-
         System.out.println("Welcome to the TextAdventure TechDemo. What is your name?");
         String playerName = scan.nextLine();
 
@@ -444,6 +415,7 @@ public class TextAdventure {
         choice = nextInt(choice);
         worldChoice(choice, Room);
     }
+
 
     private static void Church(int x) {
         switch (x) {
@@ -568,6 +540,7 @@ public class TextAdventure {
         Church(Player.currentRoom);
     }
 
+
     private static void Garden(int x) {
         switch (x) {
             case 1:
@@ -589,23 +562,135 @@ public class TextAdventure {
         if(Garden_1.visits == 0) {
             System.out.println(Garden.getIntroduction());
         }
+        System.out.println("You see a walkway that extends east and south.");
 
         endRoom(Garden_1);
         Garden(Player.currentRoom);
     }
+
     private static void Garden_2() {
+        System.out.println("You see a staircase going down to the west, and a path going south.");
+        Monster gardenImp = new Monster("Imp", 2, 2, 1.1, 13);
+        if(Garden_2.visits == 0) {
+            timerDelay(500);
+
+            System.out.println("An imp flies down and attacks!");
+            combatStart(gardenImp);
+        }
 
         endRoom(Garden_2);
         Garden(Player.currentRoom);
     }
+
     private static void Garden_3() {
+        System.out.println("A walkway leads to the north, and to the east.");
+        Monster gardenSkel = new Monster("Skeleton", 2, 2, 1.2, 17);
+        if(Garden_3.visits == 0) {
+            System.out.println("A skeleton rises from the ground and shuffles towards you.");
+            timerDelay(500);
+
+            combatStart(gardenSkel);
+        }
 
         endRoom(Garden_3);
         Garden(Player.currentRoom);
     }
-    private static void Garden_4() {
 
-        endRoom(Garden_4);
+    private static void Garden_4() {
+        System.out.println("You see a stone path to a forest in the south, and paths to the north and west.");
+        System.out.println("\nWhat do you wish to do?\n");
+        Garden_4.visits++;
+        optionsBorder(worldOptions);
+
+        int choice = 0;
+        choice = nextInt(choice);
+        switch (choice) {
+            case 1:
+                System.out.println("What direction?");
+                optionsBorder("| NORTH | EAST | SOUTH | WEST |");
+
+                String exploreChoice = scan.nextLine().toLowerCase();
+                directionFlag = 0;
+                while (directionFlag == 0) {
+                    if ("east".equals(exploreChoice)) {
+                        System.out.println("Can't go there.");
+                        directionFlag = 1;
+                    } else if ("north".equals(exploreChoice)) {
+                        directionFlag = 1;
+                        Player.currentRoom = 2;
+                    } else if ("south".equals(exploreChoice)) {
+                        directionFlag = 1;
+                        Forest_2();
+                    } else if ("west".equals(exploreChoice)) {
+                        directionFlag = 1;
+                        Player.currentRoom = 3;
+                    }
+                }
+
+                break;
+            case 2:
+                System.out.println("Your items: ");
+                Inventory.printItems();
+
+                break;
+            case 3:
+                System.out.println("What category?");
+
+                optionsBorder(Lore.loreCategories);
+                int loreChoice = 0;
+                loreChoice = nextInt(loreChoice);
+
+                Lore.choice(loreChoice);
+
+                break;
+        }
+
         Garden(Player.currentRoom);
+    }
+
+
+    private static void Forest(int x) {
+        switch (x) {
+            case 1:
+                Forest_1();
+                break;
+            case 2:
+                Forest_2();
+                break;
+            case 3:
+                Forest_3();
+                break;
+            case 4:
+                Forest_4();
+                break;
+        }
+    }
+
+    private static void Forest_1() {
+
+        endRoom(Forest_1);
+        Forest(Player.currentRoom);
+    }
+
+    private static void Forest_2() {
+        if(Forest_2.visits == 0) {
+            System.out.println(Forest.getIntroduction());
+        }
+        System.out.println();
+
+        endRoom(Forest_2);
+        Forest(Player.currentRoom);
+    }
+
+    private static void Forest_3() {
+
+        endRoom(Forest_3);
+        Forest(Player.currentRoom);
+    }
+
+    private static void Forest_4() {
+
+        endRoom(Forest_4);
+        Forest(Player.currentRoom);
     }
 }
