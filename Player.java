@@ -1,7 +1,5 @@
 import java.io.IOException;
 import java.lang.*;
-import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Player {
     static int currentRoom;
@@ -64,7 +62,7 @@ public class Player {
         setHealth(2.0);
         setMaxHP(2.0);
         setDamage(2.4);
-        setSpeed(1.4);
+        setSpeed(500/*1.4*/);
         setAttack(4);
         classType = "Thief";
     }

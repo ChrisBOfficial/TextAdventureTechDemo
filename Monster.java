@@ -1,6 +1,5 @@
 import java.io.IOException;
 import java.lang.*;
-import java.util.Scanner;
 
 public class Monster {
 
@@ -41,7 +40,7 @@ public class Monster {
         speed = level * s;
         attack = level;
         armorClass = AC;
-        xpVal = (HP / 100) * 2;
+        xpVal = (HP / 30) * 2;
         int affix = TextAdventure.affixMake();
 
         if(affix > 80 && affix < 91) {

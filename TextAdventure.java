@@ -28,9 +28,11 @@ public class TextAdventure implements Serializable {
 
     private static Location castleG = new Location("Castle Grounds", "Welcome to the castle grounds!");
     private static Room castleG_1 = new Room("Northwest", 1, "Castle Grounds");
-    private static Room castleG_2 = new Room("Northeast", 2, "Forest");
-    private static Room castleG_3 = new Room("Southwest", 3, "Forest");
-    private static Room castleG_4 = new Room("Southeast", 4, "Forest");
+    private static Room castleG_2 = new Room("Northeast", 2, "Castle Grounds");
+    private static Room castleG_3 = new Room("Southwest", 3, "Castle Grounds");
+    private static Room castleG_4 = new Room("Southeast", 4, "Castle Grounds");
+
+    private static Location throneRoom = new Location("Throne Room", "Welcome to the throne room!");
 
     private static Scanner scan = new Scanner(System.in);
 
@@ -220,8 +222,7 @@ public class TextAdventure implements Serializable {
             if(Player.humanity <= 0) {
                 System.exit(0);
             }
-        } else
-            System.out.print("uhm");
+        }
         levelUpCheck(Monster.xpVal);
     }
 
@@ -748,13 +749,13 @@ public class TextAdventure implements Serializable {
         Door castleG_Entrance = new Door("79ed689e6714525a401b0acf19d2ac5");
 
         if(Forest_1.visits == 0 && Forest_4.visits == 0)
-            System.out.println("You see an object on the ground to the north, a chest to the east.");
+            System.out.println("You see an object on the ground to the north, a chest to the east, and a gate to the south.");
         else if(Forest_1.visits == 0 && Forest_4.visits > 0)
-            System.out.println("You see an object on the ground to the north.");
+            System.out.println("You see an object on the ground to the north, and a gate to the south.");
         else if(Forest_1.visits > 0 && Forest_4.visits == 0)
-            System.out.println("You see a chest to the east.");
+            System.out.println("You see a chest to the east, and a gate to the south.");
         else
-            System.out.println("You are in a forest and see empty chests to your east and north.");
+            System.out.println("You see an empty chest to the east, and a gate to the south.");
 
         Monster forestLich = new Monster("Lich", 3, 1, 1.4, 15);
         Monster cannonFodder = new Monster("Skeleton", 1, 1, 1.1, 13);
@@ -796,8 +797,10 @@ public class TextAdventure implements Serializable {
                                 castleG(Player.currentRoom);
                                 break;
                             }
-                            else
-                                System.out.println("Door is locked.");
+                            else {
+                                System.out.println(x.name + " didn't work.");
+                                timerDelay(500);
+                            }
                         }
                     } else if ("east".equals(exploreChoice)) {
                         directionFlag = 1;
@@ -863,18 +866,133 @@ public class TextAdventure implements Serializable {
     }
 
     private static void castleG_1() {
+        optionsBorder(castleG_1.getIntroduction());
+        timerDelay(1000);
+        System.out.println("You see a gate to the north, a gate to the west, and the interior castle grounds around you.");
 
+        if(castleG_1.visits == 0) {
+            System.out.println(castleG.getIntroduction());
+        }
+
+        System.out.println("\nWhat do you wish to do?\n");
+        castleG_1.visits++;
+        optionsBorder(worldOptions);
+
+        int choice = 0;
+        choice = nextInt(choice);
+        switch (choice) {
+            case 1:
+                System.out.println("What direction?");
+                optionsBorder("| NORTH | EAST | SOUTH | WEST |");
+
+                String exploreChoice = scan.nextLine().toLowerCase();
+                directionFlag = 0;
+                while (directionFlag == 0) {
+                    if ("west".equals(exploreChoice)) {
+                        directionFlag = 1;
+                        throneRoom();
+                    } else if ("north".equals(exploreChoice)) {
+                        directionFlag = 1;
+                        Forest_3();
+                    } else if ("south".equals(exploreChoice)) {
+                        directionFlag = 1;
+                        Player.currentRoom = 3;
+                    } else if ("east".equals(exploreChoice)) {
+                        directionFlag = 1;
+                        Player.currentRoom = 2;
+                    } else
+                        directionFlag = 1;
+                }
+
+                break;
+            case 2:
+                System.out.println("Your items: ");
+                Inventory.printItems();
+
+                break;
+            case 3:
+                System.out.println("What category?");
+
+                optionsBorder(Lore.loreCategories);
+                int loreChoice = 0;
+                loreChoice = nextInt(loreChoice);
+
+                Lore.choice(loreChoice);
+
+                break;
+        }
+
+        castleG(Player.currentRoom);
     }
 
     private static void castleG_2() {
+        optionsBorder(castleG_2.getIntroduction());
+        timerDelay(1000);
+        Monster eastGuardian = new Monster("Stone Guardian", 2, 2, 1.3, 16);
 
+        if(castleG_2.visits == 0) {
+            System.out.println("You see a gate to the west, and castle walls around you, with a statue behind you.");
+            timerDelay(500);
+            System.out.println("The statue comes to life and attacks!");
+            combatStart(eastGuardian);
+        } else
+            System.out.println("You see a gate to the west, and castle walls around you, a crushed statue behind you.");
+
+        endRoom(castleG_2);
+        castleG(Player.currentRoom);
     }
 
     private static void castleG_3() {
+        optionsBorder(castleG_3.getIntroduction());
+        timerDelay(1000);
 
+        if(castleG_2.visits == 0) {
+            System.out.println("You see a gate to the northwest, and a statue to the northeast.");
+        } else
+            System.out.println("You see a gate to the northwest, and a crushed statue to the northeast.");
+
+        if(castleG_3.visits == 0){
+            HealthPotion majorHealth = new HealthPotion("Major Health Potion", 10);
+            Inventory.addItems(majorHealth);
+            System.out.println("You find a major health potion!");
+            timerDelay(500);
+            System.out.println("Added item to inventory.");
+        }
+
+        endRoom(castleG_3);
+        castleG(Player.currentRoom);
     }
 
     private static void castleG_4() {
+        optionsBorder(castleG_4.getIntroduction());
+        timerDelay(1000);
 
+        if(castleG_2.visits == 0 && castleG_3.visits == 0)
+            System.out.println("You see an item to the west, and a statue to the north.");
+        else if(castleG_2.visits == 0 && castleG_3.visits > 0)
+            System.out.println("You see a statue to the north.");
+        else if(castleG_2.visits > 0 && castleG_3.visits == 0)
+            System.out.println("You see a crushed statue to the north and an item to the west.");
+        else
+            System.out.println("You see a crushed statue to the north.");
+
+        if(castleG_4.visits == 0) {
+            HealthPotion uberHealth = new HealthPotion("Uber Health Potion", 20);
+            Inventory.addItems(uberHealth);
+            System.out.println("You find an Uber health potion!");
+            timerDelay(500);
+            System.out.println("Added item to inventory.");
+        }
+        endRoom(castleG_4);
+        castleG(Player.currentRoom);
+    }
+
+    private static void throneRoom() {
+        optionsBorder(throneRoom.getIntroduction());
+
+        System.out.println("A stone colossus is perched on a throne in front of you.");
+        timerDelay(1500);
+
+        
     }
 }

@@ -6,10 +6,6 @@ class Location {
         return introduction;
     }
 
-    public String getName() {
-        return name;
-    }
-
     Location(String n, String i) {
         name = n;
         introduction = i;

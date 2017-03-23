@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="049a7fcd-a218-43d9-81b2-d606e452c8d1" name="Default" comment="Creating locations, work in progress don't hate me.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Inventory.class" afterPath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Inventory.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Christopher.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Door.class" afterPath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Door.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Location.class" afterPath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Location.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Monster.class" afterPath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Monster.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Player.class" afterPath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Player.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Room.class" afterPath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/Room.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/TextAdventure.class" afterPath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/TextAdventure.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Inventory.java" afterPath="$PROJECT_DIR$/Inventory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Door.java" afterPath="$PROJECT_DIR$/Door.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Location.java" afterPath="$PROJECT_DIR$/Location.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Monster.java" afterPath="$PROJECT_DIR$/Monster.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Player.java" afterPath="$PROJECT_DIR$/Player.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextAdventure.java" afterPath="$PROJECT_DIR$/TextAdventure.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/TextAdventureTechDemo/.idea/workspace.xml" />
     </list>
@@ -28,8 +34,8 @@
       <file leaf-file-name="TextAdventure.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TextAdventure.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="744" column="35" lean-forward="false" selection-start-line="744" selection-start-column="35" selection-end-line="744" selection-end-column="35" />
+            <state relative-caret-position="484">
+              <caret line="995" column="8" lean-forward="false" selection-start-line="995" selection-start-column="8" selection-end-line="995" selection-end-column="8" />
               <folding>
                 <element signature="method#nextInt#0;class#TextAdventure#0" expanded="false" />
                 <element signature="method#timerDelay#0;class#TextAdventure#0" expanded="false" />
@@ -63,18 +69,8 @@
                 <element signature="method#Forest_3#0;class#TextAdventure#0" expanded="false" />
                 <element signature="method#Forest_4#0;class#TextAdventure#0" expanded="false" />
                 <element signature="method#castleG#0;class#TextAdventure#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Lore.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lore.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="30" lean-forward="false" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-              <folding>
-                <element signature="method#choice#0;class#Lore#0" expanded="false" />
+                <element signature="method#castleG_1#0;class#TextAdventure#0" expanded="false" />
+                <element signature="method#castleG_2#0;class#TextAdventure#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -83,8 +79,8 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="14" />
+            <state relative-caret-position="220">
+              <caret line="64" column="27" lean-forward="false" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -93,8 +89,8 @@
       <file leaf-file-name="Inventory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Inventory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="200">
+              <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -103,7 +99,7 @@
       <file leaf-file-name="Item.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Item.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="671">
+            <state relative-caret-position="31">
               <caret line="44" column="17" lean-forward="false" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
               <folding />
             </state>
@@ -113,8 +109,8 @@
       <file leaf-file-name="Location.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Location.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="28" column="28" lean-forward="false" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+            <state relative-caret-position="100">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,8 +119,8 @@
       <file leaf-file-name="Door.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Door.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -133,8 +129,8 @@
       <file leaf-file-name="Monster.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Monster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="20">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -159,6 +155,7 @@
       <find>remove</find>
       <find>Choice</find>
       <find>Church_1.n</find>
+      <find>door is locked</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -176,13 +173,19 @@
         <option value="$PROJECT_DIR$/Locations.java" />
         <option value="$PROJECT_DIR$/roomBounds.java" />
         <option value="$PROJECT_DIR$/Lore.java" />
-        <option value="$PROJECT_DIR$/Player.java" />
         <option value="$PROJECT_DIR$/Item.java" />
-        <option value="$PROJECT_DIR$/Door.java" />
         <option value="$PROJECT_DIR$/Artwork.java" />
         <option value="$PROJECT_DIR$/Lesson_12_FastStart.java" />
+        <option value="$PROJECT_DIR$/A.java" />
+        <option value="$PROJECT_DIR$/B.java" />
+        <option value="$PROJECT_DIR$/test.java" />
+        <option value="$PROJECT_DIR$/../Main.java" />
+        <option value="$PROJECT_DIR$/Main.java" />
         <option value="$PROJECT_DIR$/Inventory.java" />
+        <option value="$PROJECT_DIR$/Monster.java" />
         <option value="$PROJECT_DIR$/Location.java" />
+        <option value="$PROJECT_DIR$/Door.java" />
+        <option value="$PROJECT_DIR$/Player.java" />
         <option value="$PROJECT_DIR$/TextAdventure.java" />
       </list>
     </option>
@@ -207,8 +210,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -223,7 +225,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -245,9 +248,54 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="Lesson_12_FastStart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Lesson_12_FastStart" />
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="TextAdventureTechDemo" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main" type="Application" factoryName="Application" singleton="true" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="TextAdventureTechDemo" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Player" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Player" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -515,14 +563,20 @@
       <envs />
       <method />
     </configuration>
-    <list size="2">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.TextAdventure" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Lesson_12_FastStart" />
+      <item index="1" class="java.lang.String" itemvalue="Application.test" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Main (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Player" />
     </list>
     <recent_temporary>
-      <list size="2">
+      <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.TextAdventure" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Lesson_12_FastStart" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Player" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Main (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Application.test" />
       </list>
     </recent_temporary>
   </component>
@@ -565,7 +619,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66935486" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.87231183" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -607,79 +661,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TextAdventure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#nextInt#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#timerDelay#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#attack#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#healthStats#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#item#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#run#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#optionsBorder#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#combatOptions#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#combatStart#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#combatChoice#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#combatResult#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#levelUpCheck#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#worldChoice#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#explore#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#main#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#endRoom#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#Church#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#Church_1#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#Church_2#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#Church_3#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#Church_4#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#Garden#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#Garden_1#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#Garden_2#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#Garden_3#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#Garden_4#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#Forest#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#Forest_1#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#Forest_2#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#Forest_3#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#Forest_4#0;class#TextAdventure#0" expanded="false" />
-            <element signature="method#castleG#0;class#TextAdventure#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Location.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Inventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Door.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -733,6 +714,8 @@
             <element signature="method#Forest_3#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Forest_4#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#castleG#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#castleG_1#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#castleG_2#0;class#TextAdventure#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -822,6 +805,8 @@
             <element signature="method#Forest_3#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Forest_4#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#castleG#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#castleG_1#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#castleG_2#0;class#TextAdventure#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -911,6 +896,8 @@
             <element signature="method#Forest_3#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Forest_4#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#castleG#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#castleG_1#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#castleG_2#0;class#TextAdventure#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1000,6 +987,8 @@
             <element signature="method#Forest_3#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Forest_4#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#castleG#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#castleG_1#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#castleG_2#0;class#TextAdventure#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1088,65 +1077,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Door.java">
+    <entry file="file://$PROJECT_DIR$/A.java" />
+    <entry file="file://$PROJECT_DIR$/B.java" />
+    <entry file="file://$PROJECT_DIR$/test.java" />
+    <entry file="file://$PROJECT_DIR$/../Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
+        <state relative-caret-position="280">
+          <caret line="18" column="22" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Monster.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Inventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.java" />
     <entry file="file://$PROJECT_DIR$/Artwork.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-800">
+        <state relative-caret-position="60">
           <caret line="217" column="37" lean-forward="true" selection-start-line="217" selection-start-column="37" selection-end-line="217" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Location.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="28" column="28" lean-forward="false" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="44" column="17" lean-forward="false" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="14" />
+        <state relative-caret-position="220">
+          <caret line="64" column="27" lean-forward="false" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Inventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="44" column="17" lean-forward="false" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Location.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Door.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Monster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TextAdventure.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="744" column="35" lean-forward="false" selection-start-line="744" selection-start-column="35" selection-end-line="744" selection-end-column="35" />
+        <state relative-caret-position="484">
+          <caret line="995" column="8" lean-forward="false" selection-start-line="995" selection-start-column="8" selection-end-line="995" selection-end-column="8" />
           <folding>
             <element signature="method#nextInt#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#timerDelay#0;class#TextAdventure#0" expanded="false" />
@@ -1180,6 +1181,8 @@
             <element signature="method#Forest_3#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#Forest_4#0;class#TextAdventure#0" expanded="false" />
             <element signature="method#castleG#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#castleG_1#0;class#TextAdventure#0" expanded="false" />
+            <element signature="method#castleG_2#0;class#TextAdventure#0" expanded="false" />
           </folding>
         </state>
       </provider>
