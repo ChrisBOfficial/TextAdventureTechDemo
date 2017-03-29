@@ -1,7 +1,6 @@
-import java.io.IOException;
 import java.lang.*;
 
-public class Player {
+class Player {
     static int currentRoom;
     static int archetype;
     static double levelRaw = 1.0;
@@ -62,7 +61,7 @@ public class Player {
         setHealth(2.0);
         setMaxHP(2.0);
         setDamage(2.4);
-        setSpeed(500/*1.4*/);
+        setSpeed(1.4);
         setAttack(4);
         classType = "Thief";
     }
@@ -92,8 +91,5 @@ public class Player {
 
     static void setArch (int x) {
         archetype = x;
-    }
-
-    public static void main (String str[]) throws IOException {
     }
 }

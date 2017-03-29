@@ -1,7 +1,6 @@
-import java.io.IOException;
 import java.lang.*;
 
-public class Monster {
+class Monster {
 
     private String name;
     int level;
@@ -40,7 +39,7 @@ public class Monster {
         speed = level * s;
         attack = level;
         armorClass = AC;
-        xpVal = (HP / 30) * 2;
+        xpVal = (HP / 20) * 2;
         int affix = TextAdventure.affixMake();
 
         if(affix > 80 && affix < 91) {
@@ -64,6 +63,4 @@ public class Monster {
         }
     }
 
-    public static void main (String str[]) throws IOException {
-    }
 }

@@ -42,6 +42,10 @@ class Item {
         Monster.speed *= speedMod;
     }
 
+    void useItem(Boss Boss) {
+        Boss.armorClass -= armorClassMod;
+    }
+
     void useItem() {
         Player.attack += attackMod;
         Player.armorClass += armorClassMod;

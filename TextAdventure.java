@@ -38,7 +38,7 @@ public class TextAdventure implements Serializable {
 
     private static int runWorked = 0;
 
-    private static String worldOptions = "|1. EXPLORE | 2. VIEW INVENTORY | 3. LORE |";
+    private static String worldOptions = "| 1. EXPLORE | 2. VIEW INVENTORY | 3. LORE |";
 
     private static int nextInt(int x) {
         do {
@@ -96,6 +96,11 @@ public class TextAdventure implements Serializable {
                 "\nYour Health: " + Player.HP);
     }
 
+    private static void healthStats(Boss Boss) {
+        System.out.println("Enemy Health: " + Boss.HP +
+                "\nYour Health: " + Player.HP);
+    }
+
     private static void item(Monster Monster) {
         Scanner scan = new Scanner(System.in);
 
@@ -115,6 +120,38 @@ public class TextAdventure implements Serializable {
         if(itemChoice - 1 < Inventory.containedItems.size()) {
             if(!Inventory.containedItems.get(itemChoice - 1).selfUse) {
                 Inventory.containedItems.get(itemChoice - 1).useItem(Monster);
+            } else
+                Inventory.containedItems.get(itemChoice - 1).useItem();
+            if(Inventory.containedItems.get(itemChoice - 1).getCombatUse()) {
+                System.out.println("You use " + Inventory.containedItems.get(itemChoice - 1));
+                Inventory.containedItems.remove(itemChoice - 1);
+            } else
+                System.out.println("You can't use that item in combat.");
+            timerDelay(500);
+        } else
+            System.out.println("There is no item there.");
+
+    }
+
+    private static void item(Boss Boss) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Which item would you like to use?");
+        Inventory.printItems();
+        int itemChoice = 0;
+        do {
+            try {
+                itemChoice = scan.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Enter a number please.\n");
+                timerDelay(500);
+            }
+            scan.nextLine();
+        } while (itemChoice == 0);
+        //Uses selected item and modifies monster's stats accordingly
+        if(itemChoice - 1 < Inventory.containedItems.size()) {
+            if(!Inventory.containedItems.get(itemChoice - 1).selfUse) {
+                Inventory.containedItems.get(itemChoice - 1).useItem(Boss);
             } else
                 Inventory.containedItems.get(itemChoice - 1).useItem();
             if(Inventory.containedItems.get(itemChoice - 1).getCombatUse()) {
@@ -226,10 +263,27 @@ public class TextAdventure implements Serializable {
         levelUpCheck(Monster.xpVal);
     }
 
+    private static void combatResult(Boss Boss, double exp) {
+        if(Player.HP > 0 && Boss.HP <= 0) {
+            Player.setLevel(exp);
+            System.out.println("\nYou win! Current level - " + (int)Player.levelRaw);
+            //Player.HP = Player.maxHP;
+        } else if (Boss.HP > 0 && Player.HP <= 0) {
+            System.out.println("\nYou lost... Current level - " + (int)Player.levelRaw);
+            Player.humanity -= 5;
+            System.out.println("\nYou have lost 5 Humanity");
+            Player.setHealth(Player.maxHP);
+            if(Player.humanity <= 0) {
+                System.exit(0);
+            }
+        }
+        levelUpCheck(Boss.xpVal);
+    }
+
     private static void levelUpCheck(double exp) {
         Player.oldLevel = (int)Player.levelRaw;
         Player.setLevel(exp);
-        if((int)Player.levelRaw - Player.oldLevel >= 3) {
+        if((int)Player.levelRaw - Player.oldLevel >= 5) {
             Player.oldLevel = (int)Player.levelRaw;
             System.out.println("Level up! Your stats have increased.");
             Player.classChoice(Player.archetype);
@@ -340,6 +394,7 @@ public class TextAdventure implements Serializable {
         return (int)(Math.random() * 100);
     }
 
+
     public static void main (String[] str) throws IOException {
         Player.currentRoom = 1;
         Item churchKey = new Item ("Church Key", "79ed689e6714525a401b0acf19d2ac5");
@@ -347,6 +402,7 @@ public class TextAdventure implements Serializable {
         HealthPotion minorHealth = new HealthPotion("Minor Health Potion", 5);
         Door churchEntrance = new Door("79ed689e6714525a401b0acf19d2ac5");
 
+        System.out.println("Current Hash: " + MD5.getMD5());
         System.out.println("Welcome to the TextAdventure TechDemo. What is your name?");
         String playerName = scan.nextLine();
 
@@ -416,6 +472,7 @@ public class TextAdventure implements Serializable {
         }
 
     }
+
 
     private static void endRoom(Room Room) {
         System.out.println("\nWhat do you wish to do?\n");
@@ -987,12 +1044,221 @@ public class TextAdventure implements Serializable {
         castleG(Player.currentRoom);
     }
 
+
+
     private static void throneRoom() {
+        Boss stoneGiant = new Boss("Stone Colossus", 10, 2, 12);
         optionsBorder(throneRoom.getIntroduction());
 
         System.out.println("A stone colossus is perched on a throne in front of you.");
         timerDelay(1500);
 
-        
+        while (Player.HP > 0) {
+            timerDelay(250);
+            if(stoneGiant.HP <= 0) {
+                combatResult(stoneGiant, stoneGiant.xpVal);
+                break;
+            }
+
+            System.out.println(Artwork.getArtwork(stoneGiant.getName()));
+            timerDelay(250);
+
+            optionsBorder("| 1. ATTACK | 2. ITEM |");
+            int choice = 0;
+            choice = nextInt(choice);
+
+            switch (choice) {
+                case 1:
+                    stoneGiant(stoneGiant);
+                    break;
+                case 2:
+                    item(stoneGiant);
+                    break;
+            }
+        }
     }
+
+    private static void stoneGiant(Boss stoneGiant) {
+        String target = "";
+
+        int bossAttack = (int)((Math.random() * 4) + 1);
+        switch (bossAttack) {
+            case 1:
+                System.out.println("Stone Colossus swings his right arm down towards you.");
+                target = "left";
+                break;
+            case 2:
+                System.out.println("Stone Colossus swings his left arm down towards you.");
+                target = "right";
+                break;
+            case 3:
+                System.out.println("Stone Colossus winds up an overhead strike.");
+                target = "high";
+                break;
+            case 4:
+                System.out.println("Stone Colossus uppercuts.");
+                target = "low";
+                break;
+        }
+
+        timerDelay(500);
+        System.out.println("Where do you wish to attack?");
+
+        optionsBorder("| 1. LEFT | 2. RIGHT | 3. HIGH | 4. LOW");
+        int choice = 0;
+        choice = nextInt(choice);
+
+        switch (choice) {
+            case 1:
+                attackLeft(target, stoneGiant);
+                break;
+            case 2:
+                attackRight(target, stoneGiant);
+                break;
+            case 3:
+                attackHigh(target, stoneGiant);
+                break;
+            case 4:
+                attackLow(target, stoneGiant);
+                break;
+        }
+    }
+
+
+    private static void attackLeft(String t, Boss Boss) {
+        if("left".equals(t)) {
+            System.out.println("You dodge the attack!");
+            healthStats(Boss);
+
+            System.out.println("You attack...\n");
+            Player.setMakeAttack();
+
+            if(Boss.HP <= 0) {
+                return;
+            }
+            if(Player.HP <= 0) {
+                return;
+            }
+            timerDelay(500);
+            if(Player.makeAttack >= Boss.armorClass) {
+                Boss.setHealth(Player.damage);
+                System.out.println("Your attack hits! " + Player.damage + " Damage.");
+                timerDelay(500);
+                healthStats(Boss);
+                timerDelay(500);
+            } else {
+                System.out.println("Your attack is blocked.");
+            }
+        } else {
+            timerDelay(750);
+            System.out.println("You're hit! " + Boss.damage + " Damage.");
+            Player.setHealth(-Boss.damage);
+            timerDelay(500);
+            healthStats(Boss);
+            timerDelay(500);
+        }
+    }
+
+    private static void attackRight(String t, Boss Boss) {
+        if("right".equals(t)) {
+            System.out.println("You dodge the attack!");
+            healthStats(Boss);
+
+            System.out.println("You attack...\n");
+            Player.setMakeAttack();
+
+            if(Boss.HP <= 0) {
+                return;
+            }
+            if(Player.HP <= 0) {
+                return;
+            }
+            timerDelay(500);
+            if(Player.makeAttack >= Boss.armorClass) {
+                Boss.setHealth(Player.damage);
+                System.out.println("Your attack hits! " + Player.damage + " Damage.");
+                timerDelay(500);
+                healthStats(Boss);
+                timerDelay(500);
+            } else {
+                System.out.println("Your attack is blocked.");
+            }
+        } else {
+            timerDelay(750);
+            System.out.println("You're hit! " + Boss.damage + " Damage.");
+            Player.setHealth(-Boss.damage);
+            timerDelay(500);
+            healthStats(Boss);
+            timerDelay(500);
+        }
+    }
+
+    private static void attackHigh(String t, Boss Boss) {
+        if("high".equals(t)) {
+            System.out.println("You dodge the attack!");
+            healthStats(Boss);
+
+            System.out.println("You attack...\n");
+            Player.setMakeAttack();
+
+            if(Boss.HP <= 0) {
+                return;
+            }
+            if(Player.HP <= 0) {
+                return;
+            }
+            timerDelay(500);
+            if(Player.makeAttack >= Boss.armorClass) {
+                Boss.setHealth(Player.damage);
+                System.out.println("Your attack hits! " + Player.damage + " Damage.");
+                timerDelay(500);
+                healthStats(Boss);
+                timerDelay(500);
+            } else {
+                System.out.println("Your attack is blocked.");
+            }
+        } else {
+            timerDelay(750);
+            System.out.println("You're hit! " + Boss.damage + " Damage.");
+            Player.setHealth(-Boss.damage);
+            timerDelay(500);
+            healthStats(Boss);
+            timerDelay(500);
+        }
+    }
+
+    private static void attackLow(String t, Boss Boss) {
+        if("low".equals(t)) {
+            System.out.println("You dodge the attack!");
+            healthStats(Boss);
+
+            System.out.println("You attack...\n");
+            Player.setMakeAttack();
+
+            if(Boss.HP <= 0) {
+                return;
+            }
+            if(Player.HP <= 0) {
+                return;
+            }
+            timerDelay(500);
+            if(Player.makeAttack >= Boss.armorClass) {
+                Boss.setHealth(Player.damage);
+                System.out.println("Your attack hits! " + Player.damage + " Damage.");
+                timerDelay(500);
+                healthStats(Boss);
+                timerDelay(500);
+            } else {
+                System.out.println("Your attack is blocked.");
+            }
+        } else {
+            timerDelay(750);
+            System.out.println("You're hit! " + Boss.damage + " Damage.");
+            Player.setHealth(-Boss.damage);
+            timerDelay(500);
+            healthStats(Boss);
+            timerDelay(500);
+        }
+    }
+
 }

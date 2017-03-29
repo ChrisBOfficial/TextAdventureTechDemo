@@ -281,7 +281,7 @@ class Artwork {
                         "                       /\n" +
                         "                      (";
             }
-            if (type.equals("Minotaur")) {
+            if (type.equals("Minotaur") || type.equals("Stone Colossus")) {
                 return "               _\n" +
                         "                                                              _( (~\\\n" +
                         "       _ _                        /                          ( \\> > \\\n" +
